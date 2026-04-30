@@ -2,7 +2,52 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+
+$canvas: #EBE4D2;
+$rust: #683A22;
+$is: #C0D4EB;
+
+$font-brand: "Balsamiq Sans", sans-serif;
+$font-body: "Merriweather Sans", sans-serif;
+
+$primary: $rust;
+$secondary: $canvas;
+$info: $is;
+
+$body-bg: $canvas;
+$body-color: $rust;
+
+$link-color: $rust;
 $link-decoration: none;
+$link-hover-color: darken($rust, 20%);
+
+$headings-color: $rust;
+$font-family-base: $font-body;
+$headings-font-family: $font-brand;
+$btn-font-family: $font-brand;
+
+$btn-border-radius: 999px;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+
+$input-border-radius: 0.75rem;
+$input-border-color: rgba($rust, 0.35);
+$input-focus-border-color: $rust;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($rust, 0.2);
+
+$card-bg: lighten($canvas, 4%);
+$card-border-color: rgba($rust, 0.25);
+$card-border-radius: 1rem;
+$card-spacer-y: 1rem;
+$card-spacer-x: 1rem;
+
+$border-radius: 0.75rem;
+$border-radius-lg: 1rem;
+$border-radius-sm: 0.5rem;
+
+$spacer: 1rem;
+$grid-gutter-width: 1.5rem;
+
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -10,9 +55,9 @@ $link-decoration: none;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-        "canvas": #EBE4D2,
-        "rust": #683A22,
-        "is": #C0D4EB
+        "canvas": $canvas,
+        "rust": $rust,
+        "is": $is
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -20,3 +65,146 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrapComponents";
 
 // 5. Du kan lave styling her...
+
+
+//produkt karusel
+
+.product-media {
+  margin-bottom: 2rem;
+}
+
+.product-media .carousel {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background-color: rgba($rust, 0.08);
+}
+
+.product-media__item {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.product-media video.product-media__item {
+  background-color: #000;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 15%;
+}
+
+.carousel-indicators {
+  margin-bottom: 0.75rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+}
+
+//footer
+
+// =============================
+// Footer
+// =============================
+
+.site-footer {
+  background-color: $rust;
+  color: $canvas;
+  padding: 1.5rem 1rem 0.75rem;
+  margin-top: 4rem;
+}
+
+.site-footer__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.site-footer__socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.site-footer__social-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.site-footer__heading {
+  font-family: $font-brand;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $canvas;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__list li {
+  margin-bottom: 0.35rem;
+}
+
+.site-footer__list a {
+  color: $canvas;
+  font-family: $font-body;
+  font-weight: 300;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.site-footer__list a:hover,
+.site-footer__list a:focus {
+  text-decoration: underline;
+}
+
+.site-footer__copyright {
+  font-family: $font-body;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  color: $canvas;
+}
+
+// Desktop layout
+@media (min-width: 768px) {
+  .site-footer {
+    min-height: 360px;
+    padding: 3.5rem 2rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-footer__inner {
+    width: 100%;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: start;
+  }
+
+  .site-footer__socials {
+    order: 3;
+    justify-content: flex-end;
+  }
+
+  .site-footer__copyright {
+    margin-top: auto;
+  }
+}

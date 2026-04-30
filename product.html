@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+
+    <title>Sigende titel</title>
+
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+
+    <main id="main-content">
+        <section class="container py-4">
+            <h2>Pige med matcha</h2>
+        </section>
+        <section class="product-media" aria-label="Produktbilleder og video">
+            <div
+                    id="productMediaCarousel"
+                    class="carousel slide"
+                    data-bs-touch="true"
+                    data-bs-interval="false"
+            >
+
+                <div class="carousel-indicators">
+                    <button
+                            type="button"
+                            data-bs-target="#productMediaCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Vis video"
+                    ></button>
+
+                    <button
+                            type="button"
+                            data-bs-target="#productMediaCarousel"
+                            data-bs-slide-to="1"
+                            aria-label="Vis produktbillede 1"
+                    ></button>
+
+                    <button
+                            type="button"
+                            data-bs-target="#productMediaCarousel"
+                            data-bs-slide-to="2"
+                            aria-label="Vis produktbillede 2"
+                    ></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <video
+                                class="product-media__item"
+                                controls
+                                muted
+                                playsinline
+                                preload="metadata"
+                        >
+                            <source src="video/mockup%20video.mp4" type="video/mp4">
+                            Din browser understøtter ikke video.
+                        </video>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                                src="/images/1.jpg"
+                                class="product-media__item"
+                                alt="Kunstprint vist tæt på"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                                src="/images/2.jpg"
+                                class="product-media__item"
+                                alt="Kunstprint vist i ramme på væg"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                                src="/images/4.jpg"
+                                class="product-media__item"
+                                alt="Kunstprint vist i ramme på væg"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#productMediaCarousel"
+                        data-bs-slide="prev"
+                        aria-label="Forrige billede"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+
+                <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#productMediaCarousel"
+                        data-bs-slide="next"
+                        aria-label="Næste billede"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+<script>
+    const productCarousel = document.querySelector('#productMediaCarousel');
+
+    if (productCarousel) {
+        productCarousel.addEventListener('slide.bs.carousel', () => {
+            const videos = productCarousel.querySelectorAll('video');
+
+            videos.forEach((video) => {
+                video.pause();
+            });
+        });
+    }
+</script>
+
+<script src="js/includes.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
