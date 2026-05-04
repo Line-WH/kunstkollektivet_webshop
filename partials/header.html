@@ -21,42 +21,46 @@
 <header class="site-header">
     <a class="skip-link" href="#main-content">Spring til indhold</a>
 
-    <nav class="navbar navbar-expand-lg bg-canvas border-bottom">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="/logo/logo_dark.png" alt="Logo">
+    <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html" aria-label="Gå til forsiden">
+            <img src="/logo/logo_dark.png" alt="KunstKollektivet">
+        </a>
+
+        <nav class="site-header__nav" aria-label="Primær navigation">
+            <a href="index.html" data-nav-link>Hjem</a>
+            <a href="news.html" data-nav-link>Nyheder</a>
+            <a href="shop.html" data-nav-link>Alle prints</a>
+        </nav>
+
+        <div class="site-header__actions">
+            <a href="search.html" class="site-header__icon-link" aria-label="Søg">
+                <img src="/icons/icons8-search-32.png" alt="">
+            </a>
+
+            <a href="cart.html" class="site-header__icon-link" aria-label="Kurv">
+                <img src="/icons/icons8-bag-32.png" alt="">
             </a>
 
             <button
-                    class="navbar-toggler"
+                    class="site-header__menu-button"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#mainNavigation"
-                    aria-controls="mainNavigation"
+                    data-bs-target="#mobileNavigation"
+                    aria-controls="mobileNavigation"
                     aria-expanded="false"
                     aria-label="Åbn menu"
             >
-                <span class="navbar-toggler-icon"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="mainNavigation">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item">
-                        <a class="nav-link" data-nav-link href="index.html">Forside</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" data-nav-link href="shop.html">Shop</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" data-nav-link href="cart.html">Kurv</a>
-                    </li>
-
-                </ul>
-            </div>
         </div>
+    </div>
+
+    <nav class="collapse site-header__mobile-nav" id="mobileNavigation" aria-label="Mobil navigation">
+        <a href="index.html" data-nav-link>Hjem</a>
+        <a href="news.html" data-nav-link>Nyheder</a>
+        <a href="shop.html" data-nav-link>Alle prints</a>
     </nav>
 </header>
 </body>
