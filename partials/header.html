@@ -19,43 +19,53 @@
 </head>
 <body>
 <header class="site-header">
-    <a class="skip-link" href="#main-content">Spring til indhold</a>
+    <div class="container">
+        <div class="row align-items-center flex-nowrap">
 
-    <div class="site-header__bar">
-        <a class="site-header__logo" href="index.html" aria-label="Gå til forsiden">
-            <img src="/logo/logo_dark.png" alt="KunstKollektivet">
-        </a>
+            <div class="col-auto">
+                <a class="site-header__logo" href="index.html" aria-label="Gå til forsiden">
+                    <img src="/logo/logo_dark.png" alt="KunstKollektivet">
+                </a>
+            </div>
 
-        <nav class="site-header__nav" aria-label="Primær navigation">
-            <a href="index.html" data-nav-link>Hjem</a>
-            <a href="news.html" data-nav-link>Nyheder</a>
-            <a href="shop.html" data-nav-link>Alle prints</a>
-        </nav>
+            <div class="col d-none d-md-block">
+                <nav class="site-header__nav" aria-label="Primær navigation">
+                    <a href="index.html" data-nav-link>Hjem</a>
+                    <a href="#nyheder" data-nav-link>Nyheder</a>
+                    <a href="shop.html" data-nav-link>Alle prints</a>
+                </nav>
+            </div>
 
-        <div class="site-header__actions">
-            <a href="search.html" class="site-header__icon-link" aria-label="Søg">
-                <img src="/icons/icons8-search-32.png" alt="">
-            </a>
+            <div class="col-auto ms-auto">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="" class="site-header__icon-link" aria-label="Søg">
+                        <img src="/icons/icons8-search-32.png" alt="">
+                    </a>
 
-            <a href="cart.html" class="site-header__icon-link" aria-label="Kurv">
-                <img src="/icons/icons8-bag-32.png" alt="">
-            </a>
+                    <a href="cart.html" class="site-header__icon-link" aria-label="Kurv">
+                        <img src="/icons/icons8-bag-32.png" alt="">
+                    </a>
 
-            <button
-                    class="site-header__menu-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mobileNavigation"
-                    aria-controls="mobileNavigation"
-                    aria-expanded="false"
-                    aria-label="Åbn menu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                    <button
+                            class="site-header__menu-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#mobileNavigation"
+                            aria-controls="mobileNavigation"
+                            aria-expanded="false"
+                            aria-label="Åbn menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+            </div>
+
         </div>
     </div>
+
 
     <nav class="collapse site-header__mobile-nav" id="mobileNavigation" aria-label="Mobil navigation">
         <a href="index.html" data-nav-link>Hjem</a>
