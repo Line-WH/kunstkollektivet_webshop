@@ -108,11 +108,24 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 //header
 
 .site-header {
-  background-color: $canvas;
+  background-color: rgba($canvas, 0.92);
   color: $rust;
-  top: 0;
   z-index: 1000;
   padding: 0.35rem 0;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow: none;
+
+  transition:
+          background-color 180ms ease,
+          box-shadow 180ms ease;
+}
+
+.site-header--scrolled {
+  background-color: rgba($canvas, 0.97);
+  box-shadow: 0 0.35rem 1.4rem rgba($rust, 0.14);
 }
 
 .site-header__logo {

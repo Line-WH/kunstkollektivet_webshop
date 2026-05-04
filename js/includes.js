@@ -30,6 +30,24 @@ function setActiveNavLink() {
     });
 }
 
+function initHeaderScrollState() {
+    const header = document.querySelector(".site-header");
+
+    if (!header || header.dataset.headerInitialized === "true") return;
+
+    header.dataset.headerInitialized = "true";
+
+    const updateHeaderState = () => {
+        header.classList.toggle("site-header--scrolled", window.scrollY > 8);
+    };
+
+    updateHeaderState();
+
+    window.addEventListener("scroll", updateHeaderState, {
+        passive: true
+    });
+}
+
 async function initPartials() {
     await Promise.all([
         loadPartial("#site-header", "partials/header.html"),
@@ -37,6 +55,7 @@ async function initPartials() {
     ]);
 
     setActiveNavLink();
+    initHeaderScrollState();
 }
 
 initPartials();
