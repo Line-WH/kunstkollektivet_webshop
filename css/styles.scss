@@ -125,7 +125,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .site-header--scrolled {
   background-color: rgba($canvas, 0.97);
-  box-shadow: 0 0.35rem 1.4rem rgba($rust, 0.14);
+  box-shadow: 0 0.5rem 1.75rem rgba($rust, 0.16);
 }
 
 .site-header__logo {
@@ -143,6 +143,21 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+
+.site-header__mobile-nav {
+  background-color: $canvas;
+  border-bottom: 1px solid rgba($rust, 0.15);
+  padding: 0.35rem 1rem 0.65rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.site-header__mobile-nav a {
+  display: block;
+  padding: 0.4rem 0;
 }
 
 .site-header__nav a,
