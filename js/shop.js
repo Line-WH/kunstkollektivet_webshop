@@ -19,7 +19,7 @@ function renderProductCards(productGrid) {
 
 function createProductCard(product) {
     const column = document.createElement("div");
-    column.className = "col-6 col-md-4 col-lg-3";
+    column.className = "col-12 col-md-4";
 
     const firstImage = product.images[0];
 

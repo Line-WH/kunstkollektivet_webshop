@@ -66,6 +66,56 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+
+//shop side styling
+.shop-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  color: $rust;
+  text-decoration: none;
+  height: 100%;
+}
+
+.shop-card__image-wrap {
+  flex: 0 0 135px;
+  width: 135px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.shop-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.shop-card__body {
+  min-width: 0;
+}
+
+.shop-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.shop-card__artist {
+  margin: 0 0 0.35rem;
+  font-size: 0.85rem;
+  color: rgba($rust, 0.75);
+}
+
+.shop-card__price {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+//Product side styling
+
 // Product layout
 
 .product-page {

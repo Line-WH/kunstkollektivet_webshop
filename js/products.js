@@ -5,8 +5,8 @@ const products = [
         title: "Pige med matcha",
         artist: "Nana Rooed",
 
-        description: "Beskrivelse af gældende værk i varierende detaljegrad.",
-        artistDescription: "Beskrivelse af kunstneren i varierende detaljegrad.",
+        description: "Bring noget varme og ro ind i hjemmet med det her skønne lille værk af Nana Rooed. Det er perfekt til hvor som helst hvor du mangler farve og roligt spil på din væg.",
+        artistDescription: "Nana Rooed er en kreativ sjæl som holder af at bruge oliekridt og klasiske tucsher. Hendes udtryk bærer derfor også meget præg af teksture og stemninger.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
 
         images: [
