@@ -66,12 +66,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
-// Product carousel
+// Product layout
 
-.product-gallery {
-  max-width: 560px;
-  margin-inline: auto;
+.product-page {
+  background-color: $canvas;
 }
+
+.product-layout {
+  padding-bottom: 3rem;
+}
+
+// Carousel
 
 .product-carousel {
   overflow: hidden;
@@ -113,31 +118,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   width: 14%;
 }
 
-@media (min-width: 768px) {
-  .product-gallery {
-    max-width: 640px;
-  }
-
-  .product-carousel {
-    border-radius: $border-radius-lg;
-  }
-}
-
-// Product page
-
-.product-page {
-  min-height: 70vh;
-}
-
-
-// Product content
-
-.product-content {
-  padding-top: 0.5rem;
-  padding-bottom: 3.5rem;
-}
-
-// Purchase area
+// Product purchase
 
 .product-purchase {
   padding-top: 0.25rem;
@@ -178,24 +159,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   border-top: 1px solid rgba($rust, 0.2);
 }
 
-.product-form .form-label {
-  font-family: $font-brand;
-  font-weight: 700;
-  color: $rust;
-  margin-bottom: 0.4rem;
-}
-
-.product-form .form-select {
-  background-color: rgba(lighten($canvas, 4%), 0.75);
-  border: 1px solid rgba($rust, 0.28);
-  color: $rust;
-}
-
-.product-form .form-select:focus {
-  border-color: $rust;
-  box-shadow: 0 0 0 0.25rem rgba($rust, 0.18);
-}
-
 .product-form__button {
   width: 100%;
 }
@@ -213,7 +176,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   font-size: 0.95rem;
 }
 
-// Product copy
+// Product text
 
 .product-copy {
   max-width: 34rem;
@@ -237,8 +200,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   margin-bottom: 0;
 }
 
-// Soft foldout instead of boxed accordion
-
 .product-foldout {
   border-top: 1px solid rgba($rust, 0.2);
   border-bottom: 1px solid rgba($rust, 0.2);
@@ -258,41 +219,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   line-height: 1.45;
 }
 
-.product-foldout__content p {
-  margin-bottom: 0;
-}
-
-// Desktop
-
 @media (min-width: 992px) {
-  .product-content {
-    padding-top: 2rem;
-  }
-
   .product-purchase {
     position: sticky;
     top: 7rem;
-    padding-left: 2rem;
-    border-left: 1px solid rgba($rust, 0.18);
   }
 
-  .product-purchase__title {
-    font-size: 1.5rem;
-  }
-
-  .product-copy {
-    padding-top: 0.35rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .product-summary {
-    position: sticky;
-    top: 7rem;
-  }
-
-  .product-media {
-    margin-bottom: 0;
+  .product-carousel {
+    border-radius: $border-radius-lg;
   }
 }
 //header

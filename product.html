@@ -28,70 +28,64 @@
 
 <main id="main-content" class="product-page">
 
-    <section class="product-gallery container py-3" aria-label="Produktbilleder og video">
+    <section class="product-layout container py-3 py-lg-5">
 
-        <div
-                id="productMediaCarousel"
-                class="carousel slide product-carousel"
-                data-bs-touch="true"
-                data-bs-interval="false"
-        >
+        <div class="row g-4 g-lg-5 align-items-start">
 
-            <div
-                    id="product-carousel-indicators"
-                    class="carousel-indicators"
-            >
-                <!-- Injected by product.js -->
+            <!-- Product carousel -->
+            <div class="col-12 col-lg-7">
+
+                <section class="product-gallery" aria-label="Produktbilleder og video">
+
+                    <div
+                            id="productMediaCarousel"
+                            class="carousel slide product-carousel"
+                            data-bs-touch="true"
+                            data-bs-interval="false"
+                    >
+
+                        <div
+                                id="product-carousel-indicators"
+                                class="carousel-indicators"
+                        >
+                            <!-- Injected by product.js -->
+                        </div>
+
+                        <div
+                                id="product-carousel-inner"
+                                class="carousel-inner"
+                        >
+                            <!-- Injected by product.js -->
+                        </div>
+
+                        <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#productMediaCarousel"
+                                data-bs-slide="prev"
+                                aria-label="Forrige billede"
+                        >
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+
+                        <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#productMediaCarousel"
+                                data-bs-slide="next"
+                                aria-label="Næste billede"
+                        >
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+
+                    </div>
+
+                </section>
+
             </div>
-
-            <div
-                    id="product-carousel-inner"
-                    class="carousel-inner"
-            >
-                <!-- Injected by product.js -->
-            </div>
-
-            <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#productMediaCarousel"
-                    data-bs-slide="prev"
-                    aria-label="Forrige billede"
-            >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-
-            <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#productMediaCarousel"
-                    data-bs-slide="prev"
-                    aria-label="Forrige billede"
-            >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-
-            <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#productMediaCarousel"
-                    data-bs-slide="next"
-                    aria-label="Næste billede"
-            >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- Product content -->
-    <section class="product-content container">
-
-        <div class="row g-5 align-items-start">
 
             <!-- Buy area -->
-            <div class="col-12 col-lg-5 order-lg-2">
+            <div class="col-12 col-lg-5">
 
                 <aside class="product-purchase" aria-labelledby="product-title">
 
@@ -213,8 +207,12 @@
 
             </div>
 
-            <!-- Text area -->
-            <div class="col-12 col-lg-7 order-lg-1">
+        </div>
+
+        <!-- Product text -->
+        <div class="row mt-4 mt-lg-5">
+
+            <div class="col-12 col-lg-7">
 
                 <div class="product-copy">
 
