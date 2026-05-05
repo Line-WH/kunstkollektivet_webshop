@@ -3,147 +3,264 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Sigende titel</title>
+    <title>Produkt | KunstKollektivet</title>
 
     <meta name="robots" content="All">
-    <meta name="author" content="Udgiver">
-    <meta name="copyright" content="Information om copyright">
+    <meta name="author" content="KunstKollektivet">
+    <meta name="copyright" content="KunstKollektivet">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+    >
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 
-    <div id="site-header" class="sticky-top"></div>
+<div id="site-header" class="sticky-top"></div>
 
+<main id="main-content" class="product-page">
 
-    <main id="main-content">
-        <section class="container py-4">
-            <h2>Pige med matcha</h2>
-        </section>
-        <section class="product-media" aria-label="Produktbilleder og video">
+    <section class="product-gallery container py-3" aria-label="Produktbilleder og video">
+
+        <div
+                id="productMediaCarousel"
+                class="carousel slide product-carousel"
+                data-bs-touch="true"
+                data-bs-interval="false"
+        >
+
             <div
-                    id="productMediaCarousel"
-                    class="carousel slide"
-                    data-bs-touch="true"
-                    data-bs-interval="false"
+                    id="product-carousel-indicators"
+                    class="carousel-indicators"
             >
+                <!-- Injected by product.js -->
+            </div>
 
-                <div class="carousel-indicators">
-                    <button
-                            type="button"
-                            data-bs-target="#productMediaCarousel"
-                            data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Vis video"
-                    ></button>
+            <div
+                    id="product-carousel-inner"
+                    class="carousel-inner"
+            >
+                <!-- Injected by product.js -->
+            </div>
 
-                    <button
-                            type="button"
-                            data-bs-target="#productMediaCarousel"
-                            data-bs-slide-to="1"
-                            aria-label="Vis produktbillede 1"
-                    ></button>
+            <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#productMediaCarousel"
+                    data-bs-slide="prev"
+                    aria-label="Forrige billede"
+            >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
 
-                    <button
-                            type="button"
-                            data-bs-target="#productMediaCarousel"
-                            data-bs-slide-to="2"
-                            aria-label="Vis produktbillede 2"
-                    ></button>
-                </div>
+            <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#productMediaCarousel"
+                    data-bs-slide="prev"
+                    aria-label="Forrige billede"
+            >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
 
-                <div class="carousel-inner">
+            <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#productMediaCarousel"
+                    data-bs-slide="next"
+                    aria-label="Næste billede"
+            >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
 
-                    <div class="carousel-item active">
-                        <video
-                                class="product-media__item"
-                                controls
-                                muted
-                                playsinline
-                                preload="metadata"
+        </div>
+
+    </section>
+
+    <!-- Product content -->
+    <section class="product-content container">
+
+        <div class="row g-5 align-items-start">
+
+            <!-- Buy area -->
+            <div class="col-12 col-lg-5 order-lg-2">
+
+                <aside class="product-purchase" aria-labelledby="product-title">
+
+                    <p
+                            id="product-category"
+                            class="product-purchase__eyebrow"
+                    >
+                        <!-- Injected category -->
+                    </p>
+
+                    <h1
+                            id="product-title"
+                            class="product-purchase__title"
+                    >
+                        <!-- Injected title -->
+                    </h1>
+
+                    <p
+                            id="product-artist"
+                            class="product-purchase__artist"
+                    >
+                        <!-- Injected artist -->
+                    </p>
+
+                    <p
+                            id="product-price"
+                            class="product-purchase__price"
+                    >
+                        <!-- Price calculated by product.js -->
+                    </p>
+
+                    <form class="product-form">
+
+                        <div class="mb-3">
+                            <label for="product-size" class="form-label">
+                                Størrelse
+                            </label>
+
+                            <select
+                                    id="product-size"
+                                    class="form-select"
+                                    name="size"
+                            >
+                                <option value="A4" data-price="400" selected>
+                                    A4 — 400 kr
+                                </option>
+
+                                <option value="A3" data-price="550">
+                                    A3 — 550 kr
+                                </option>
+
+                                <option value="50x70" data-price="700">
+                                    50 × 70 cm — 700 kr
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="product-paper" class="form-label">
+                                Papirtype
+                            </label>
+
+                            <select
+                                    id="product-paper"
+                                    class="form-select"
+                                    name="paper"
+                            >
+                                <option value="mat-fine-art" selected>
+                                    Mat fine art papir
+                                </option>
+
+                                <option value="strukturpapir">
+                                    Let strukturpapir
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="product-frame" class="form-label">
+                                Ramme
+                            </label>
+
+                            <select
+                                    id="product-frame"
+                                    class="form-select"
+                                    name="frame"
+                            >
+                                <option value="uden-ramme" data-price-modifier="0" selected>
+                                    Uden ramme
+                                </option>
+
+                                <option value="sort-ramme" data-price-modifier="250">
+                                    Sort ramme + 250 kr
+                                </option>
+
+                                <option value="eg-ramme" data-price-modifier="300">
+                                    Eg ramme + 300 kr
+                                </option>
+                            </select>
+                        </div>
+
+                        <button
+                                type="button"
+                                id="add-to-cart-button"
+                                class="btn btn-primary product-form__button"
                         >
-                            <source src="video/mockup%20video.mp4" type="video/mp4">
-                            Din browser understøtter ikke video.
-                        </video>
-                    </div>
+                            Læg i kurven
+                        </button>
 
-                    <div class="carousel-item">
-                        <img
-                                src="/images/1.jpg"
-                                class="product-media__item"
-                                alt="Kunstprint vist tæt på"
-                        >
-                    </div>
+                    </form>
 
-                    <div class="carousel-item">
-                        <img
-                                src="/images/2.jpg"
-                                class="product-media__item"
-                                alt="Kunstprint vist i ramme på væg"
-                        >
-                    </div>
+                    <ul class="product-purchase__notes">
+                        <li>Printet lokalt i Danmark</li>
+                        <li>Produceret på kvalitetspapir</li>
+                        <li>Kunstneren beholder rettighederne</li>
+                    </ul>
 
-                    <div class="carousel-item">
-                        <img
-                                src="/images/4.jpg"
-                                class="product-media__item"
-                                alt="Kunstprint vist i ramme på væg"
-                        >
-                    </div>
-
-                </div>
-
-                <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#productMediaCarousel"
-                        data-bs-slide="prev"
-                        aria-label="Forrige billede"
-                >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-
-                <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#productMediaCarousel"
-                        data-bs-slide="next"
-                        aria-label="Næste billede"
-                >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
+                </aside>
 
             </div>
-        </section>
-    </main>
 
-    <div id="site-footer"></div>
+            <!-- Text area -->
+            <div class="col-12 col-lg-7 order-lg-1">
 
-<script>
-    const productCarousel = document.querySelector('#productMediaCarousel');
+                <div class="product-copy">
 
-    if (productCarousel) {
-        productCarousel.addEventListener('slide.bs.carousel', () => {
-            const videos = productCarousel.querySelectorAll('video');
+                    <section class="product-copy__section">
+                        <h2>Beskrivelse af værket</h2>
 
-            videos.forEach((video) => {
-                video.pause();
-            });
-        });
-    }
-</script>
+                        <p id="product-description">
+                            <!-- Injected product description -->
+                        </p>
+                    </section>
+
+                    <section class="product-copy__section">
+                        <h2>Om kunstneren</h2>
+
+                        <p id="product-artist-description">
+                            <!-- Injected artist description -->
+                        </p>
+                    </section>
+
+                    <details class="product-foldout">
+                        <summary>Materialer og levering</summary>
+
+                        <div class="product-foldout__content">
+                            <p id="product-materials">
+                                <!-- Injected materials and delivery text -->
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
 
 <script src="js/includes.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="js/products.js"></script>
+<script src="js/product.js"></script>
 
 </body>
 </html>

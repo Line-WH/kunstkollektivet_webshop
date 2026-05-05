@@ -66,45 +66,235 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+// Product carousel
 
-//produkt karusel
-
-.product-media {
-  margin-bottom: 2rem;
+.product-gallery {
+  max-width: 560px;
+  margin-inline: auto;
 }
 
-.product-media .carousel {
-  border-radius: $border-radius-lg;
+.product-carousel {
   overflow: hidden;
   background-color: rgba($rust, 0.08);
 }
 
-.product-media__item {
+.product-carousel__media {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
+  object-position: center;
+  background-color: rgba($rust, 0.06);
 }
 
-.product-media video.product-media__item {
+.product-carousel video.product-carousel__media {
   background-color: #000;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 15%;
+.product-carousel__placeholder {
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  color: rgba($rust, 0.75);
 }
 
-.carousel-indicators {
-  margin-bottom: 0.75rem;
+.product-carousel .carousel-indicators {
+  margin-bottom: 0.65rem;
 }
 
-.carousel-indicators [data-bs-target] {
-  width: 0.65rem;
-  height: 0.65rem;
+.product-carousel .carousel-indicators [data-bs-target] {
+  width: 0.55rem;
+  height: 0.55rem;
   border-radius: 50%;
 }
 
+.product-carousel .carousel-control-prev,
+.product-carousel .carousel-control-next {
+  width: 14%;
+}
+
+@media (min-width: 768px) {
+  .product-gallery {
+    max-width: 640px;
+  }
+
+  .product-carousel {
+    border-radius: $border-radius-lg;
+  }
+}
+
+// Product page
+
+.product-page {
+  min-height: 70vh;
+}
+
+
+// Product content
+
+.product-content {
+  padding-top: 0.5rem;
+  padding-bottom: 3.5rem;
+}
+
+// Purchase area
+
+.product-purchase {
+  padding-top: 0.25rem;
+}
+
+.product-purchase__eyebrow {
+  font-family: $font-brand;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba($rust, 0.75);
+  margin-bottom: 0.5rem;
+}
+
+.product-purchase__title {
+  font-family: $font-body;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $rust;
+  margin-bottom: 0.5rem;
+}
+
+.product-purchase__artist {
+  color: rgba($rust, 0.72);
+  margin-bottom: 0.75rem;
+}
+
+.product-purchase__price {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: $rust;
+  margin-bottom: 1.5rem;
+}
+
+.product-form {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba($rust, 0.2);
+}
+
+.product-form .form-label {
+  font-family: $font-brand;
+  font-weight: 700;
+  color: $rust;
+  margin-bottom: 0.4rem;
+}
+
+.product-form .form-select {
+  background-color: rgba(lighten($canvas, 4%), 0.75);
+  border: 1px solid rgba($rust, 0.28);
+  color: $rust;
+}
+
+.product-form .form-select:focus {
+  border-color: $rust;
+  box-shadow: 0 0 0 0.25rem rgba($rust, 0.18);
+}
+
+.product-form__button {
+  width: 100%;
+}
+
+.product-purchase__notes {
+  list-style: none;
+  padding: 1.25rem 0 0;
+  margin: 1.25rem 0 0;
+  border-top: 1px solid rgba($rust, 0.2);
+}
+
+.product-purchase__notes li {
+  padding: 0.45rem 0;
+  color: rgba($rust, 0.85);
+  font-size: 0.95rem;
+}
+
+// Product copy
+
+.product-copy {
+  max-width: 34rem;
+}
+
+.product-copy__section {
+  margin-bottom: 2.5rem;
+}
+
+.product-copy__section h2 {
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $rust;
+  margin-bottom: 0.9rem;
+}
+
+.product-copy__section p {
+  color: $rust;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+// Soft foldout instead of boxed accordion
+
+.product-foldout {
+  border-top: 1px solid rgba($rust, 0.2);
+  border-bottom: 1px solid rgba($rust, 0.2);
+  padding: 1rem 0;
+}
+
+.product-foldout summary {
+  cursor: pointer;
+  font-family: $font-body;
+  font-weight: 700;
+  color: $rust;
+}
+
+.product-foldout__content {
+  padding-top: 1rem;
+  color: $rust;
+  line-height: 1.45;
+}
+
+.product-foldout__content p {
+  margin-bottom: 0;
+}
+
+// Desktop
+
+@media (min-width: 992px) {
+  .product-content {
+    padding-top: 2rem;
+  }
+
+  .product-purchase {
+    position: sticky;
+    top: 7rem;
+    padding-left: 2rem;
+    border-left: 1px solid rgba($rust, 0.18);
+  }
+
+  .product-purchase__title {
+    font-size: 1.5rem;
+  }
+
+  .product-copy {
+    padding-top: 0.35rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-summary {
+    position: sticky;
+    top: 7rem;
+  }
+
+  .product-media {
+    margin-bottom: 0;
+  }
+}
 //header
 
 .site-header {
@@ -148,7 +338,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .site-header__mobile-nav {
   background-color: $canvas;
   border-bottom: 1px solid rgba($rust, 0.15);
-  padding: 0.35rem 1rem 0.65rem;
+  padding: 0.75rem 1rem 1rem;
 
   display: flex;
   flex-direction: column;
@@ -157,11 +347,10 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .site-header__mobile-nav a {
   display: block;
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
 }
 
-.site-header__nav a,
-.site-header__mobile-nav a {
+.site-header__nav a {
   font-family: $font-brand;
   font-weight: 700;
   color: $rust;
