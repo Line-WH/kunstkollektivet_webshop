@@ -11,15 +11,15 @@ const products = [
 
         images: [
             {
-                src: "images/1.jpg",
+                src: "images/matcha_1.jpg",
                 alt: "Kunstprintet Pige med matcha vist tæt på"
             },
             {
-                src: "images/2.jpg",
+                src: "images/matcha_2.jpg",
                 alt: "Kunstprintet Pige med matcha vist i ramme"
             },
             {
-                src: "images/4.jpg",
+                src: "images/matcha_4.jpg",
                 alt: "Detaljebillede af kunstprintet Pige med matcha"
             }
         ],
