@@ -376,6 +376,57 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   border-radius: 999px;
 }
 
+//confirmation
+
+.confirmation-page {
+  min-height: 70vh;
+}
+
+.confirmation-card {
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.confirmation-card__icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.18rem solid $rust;
+  border-radius: 999px;
+
+  color: $rust;
+  font-family: $font-brand;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.confirmation-card__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.confirmation-card__intro,
+.confirmation-card__delivery {
+  max-width: 20rem;
+  margin-inline: auto;
+  font-size: 0.85rem;
+}
+
+.confirmation-card__delivery {
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-card__button {
+  min-width: 15rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
 
 //header
 
