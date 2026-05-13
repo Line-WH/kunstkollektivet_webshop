@@ -56,6 +56,10 @@ async function initPartials() {
 
     setActiveNavLink();
     initHeaderScrollState();
+
+    if (window.CartStorage) {
+        window.CartStorage.updateCartCount();
+    }
 }
 
 initPartials();

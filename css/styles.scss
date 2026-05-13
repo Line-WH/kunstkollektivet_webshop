@@ -392,6 +392,31 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   padding: 0.6rem 0;
 }
 
+.site-header__cart-link {
+  position: relative;
+}
+
+.site-header__cart-count {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.45rem;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.3rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  background-color: $is;
+  color: $rust;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 // Desktop
 @media (min-width: 768px) {
   .site-header {

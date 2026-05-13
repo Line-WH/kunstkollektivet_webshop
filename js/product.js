@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setupPriceUpdater();
     setupCarouselVideoPause();
     updatePrice();
+
+    setupAddToCart(product);
+    if (window.CartStorage) {
+        window.CartStorage.updateCartCount();
+    }
 });
 
 function renderProduct(product) {
@@ -43,16 +48,22 @@ function renderGallery(product) {
 
     const mediaItems = [];
 
-    if (product.video) {
+    const videos = Array.isArray(product.videos)
+        ? product.videos
+        : product.video
+            ? [product.video]
+            : [];
+
+    videos.forEach((video) => {
         mediaItems.push({
             type: "video",
-            src: product.video.src,
-            mimeType: product.video.type,
-            alt: product.video.label || `${product.title} video`
+            src: video.src,
+            mimeType: video.type || "video/mp4",
+            alt: video.label || `${product.title} video`
         });
-    }
+    });
 
-    product.images.forEach((image) => {
+    (product.images || []).forEach((image) => {
         mediaItems.push({
             type: "image",
             src: image.src,
@@ -177,4 +188,71 @@ function showProductNotFound() {
             <a href="shop.html" class="btn btn-primary">Tilbage til shoppen</a>
         </section>
     `;
+}
+
+function setupAddToCart(product) {
+    const addToCartButton = document.querySelector("#add-to-cart-button");
+    const feedbackElement = document.querySelector("#cart-feedback");
+
+    if (!addToCartButton) {
+        return;
+    }
+
+    addToCartButton.addEventListener("click", () => {
+        if (!window.CartStorage) {
+            console.error("CartStorage er ikke loaded. Tjek script-rækkefølgen.");
+            return;
+        }
+
+        const cartItem = createCartItem(product);
+
+        window.CartStorage.addItem(cartItem);
+
+        showCartFeedback(feedbackElement, `${product.title} er lagt i kurven.`);
+    });
+}
+
+function createCartItem(product) {
+    const selectedSize = getSelectedOption("#product-size");
+    const selectedPaper = getSelectedOption("#product-paper");
+    const selectedFrame = getSelectedOption("#product-frame");
+
+    const basePrice = Number(selectedSize.option.dataset.price) || 0;
+    const framePrice = Number(selectedFrame.option.dataset.priceModifier) || 0;
+    const totalPrice = basePrice + framePrice;
+
+    return {
+        id: `${product.slug}-${selectedSize.value}-${selectedPaper.value}-${selectedFrame.value}`,
+        slug: product.slug,
+        title: product.title,
+        artist: product.artist,
+        category: product.category,
+        size: selectedSize.label,
+        paper: selectedPaper.label,
+        frame: selectedFrame.label,
+        price: totalPrice,
+        quantity: 1,
+        image: product.images?.[0]?.src || "",
+        imageAlt: product.images?.[0]?.alt || product.title
+    };
+}
+
+function getSelectedOption(selector) {
+    const select = document.querySelector(selector);
+    const option = select.selectedOptions[0];
+
+    return {
+        value: select.value,
+        label: option.textContent.trim(),
+        option: option
+    };
+}
+
+function showCartFeedback(feedbackElement, message) {
+    if (!feedbackElement) {
+        return;
+    }
+
+    feedbackElement.textContent = message;
+    feedbackElement.classList.remove("d-none");
 }
