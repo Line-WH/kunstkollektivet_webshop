@@ -68,7 +68,77 @@ const products = [
             type: "video/mp4",
             label: "produktvideo"
         }
-    }
+    },
+
+    {
+        slug: "nordisk-kald",
+        title: "Nordisk kald",
+        artist: "Heidi Larsen",
+
+        description: "Bring noget varme og ro ind i hjemmet med det her skønne lille værk af Nana Rooed. Det er perfekt til hvor som helst hvor du mangler farve og roligt spil på din væg.",
+        artistDescription: "Nana Rooed er en kreativ sjæl som holder af at bruge oliekridt og klasiske tucsher. Hendes udtryk bærer derfor også meget præg af teksture og stemninger.",
+        materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+
+        images: [
+            {
+                src: "images/nordisk-kald-1.jpg",
+                alt: "print af kvinde med natur"
+            },
+            {
+                src: "images/nordisk-kald-2.jpg",
+                alt: "print af kvinde med natur i ramme"
+            },
+            {
+                src: "images/nordisk-kald-3.jpg",
+                alt: "print af kvinde med natur på væggen"
+            },
+            {
+                src: "images/nordisk-kald-4.jpg",
+                alt: "detaljeret print af kvinde med natur"
+            }
+        ],
+
+        video: {
+            src: "video/nordisk-video.mp4",
+            type: "video/mp4",
+            label: "produktvideo"
+        }
+    },
+
+    {
+        slug: "blaa-slange",
+        title: "Blå slange",
+        artist: "Annie Josefsen",
+
+        description: "Bring noget varme og ro ind i hjemmet med det her skønne lille værk af Nana Rooed. Det er perfekt til hvor som helst hvor du mangler farve og roligt spil på din væg.",
+        artistDescription: "Nana Rooed er en kreativ sjæl som holder af at bruge oliekridt og klasiske tucsher. Hendes udtryk bærer derfor også meget præg af teksture og stemninger.",
+        materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+
+        images: [
+            {
+                src: "images/blå-slange-1.jpg",
+                alt: "print af en blå slange"
+            },
+            {
+                src: "images/blå-slange-2.jpg",
+                alt: "print af en blå slange i ramme"
+            },
+            {
+                src: "images/blå-slange-3.jpg",
+                alt: "print af en blå slange på væggen"
+            },
+            {
+                src: "images/blå-slange-4.jpg",
+                alt: "detaljeret print af en blå slange"
+            }
+        ],
+
+        video: {
+            src: "video/blå-video.mp4",
+            type: "video/mp4",
+            label: "produktvideo"
+        }
+    },
 
 
 ];
