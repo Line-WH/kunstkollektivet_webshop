@@ -1,10 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+
+    <title>Betaling | KunstKollektivet</title>
+
+    <meta name="robots" content="All">
+    <meta name="author" content="KunstKollektivet">
+    <meta name="copyright" content="KunstKollektivet">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+    >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
+
+<div id="site-header" class="sticky-top"></div>
+
+<main id="main-content" class="checkout-page py-4">
+    <section class="container">
+
+        <h1 class="h5 mb-3">Betaling</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-7 col-xl-6">
+
+                <section class="checkout-order mb-5" aria-labelledby="checkout-order-title">
+                    <h2 id="checkout-order-title" class="checkout-order__title">
+                        Din Ordre
+                    </h2>
+
+                    <div id="checkout-order-items">
+                        <!-- Injected by checkout.js -->
+                    </div>
+
+                    <div class="checkout-order__summary">
+                        <div class="checkout-order__line">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">0 kr.</span>
+                        </div>
+
+                        <div class="checkout-order__line">
+                            <span>Fragt</span>
+                            <span id="checkout-shipping">gratis</span>
+                        </div>
+
+                        <div class="checkout-order__line checkout-order__line--total">
+                            <span>Total</span>
+                            <span id="checkout-total">0 kr.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <form id="checkout-form" class="checkout-form">
+
+                    <section class="checkout-form__section" aria-labelledby="contact-title">
+                        <h2 id="contact-title" class="checkout-form__title">
+                            Kontaktinformation
+                        </h2>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    class="form-control"
+                                    required
+                            >
+                        </div>
+                    </section>
+
+                    <section class="checkout-form__section" aria-labelledby="shipping-title">
+                        <h2 id="shipping-title" class="checkout-form__title">
+                            Leveringsadresse
+                        </h2>
+
+                        <div class="mb-3">
+                            <label for="shipping-name" class="form-label">Fulde navn</label>
+                            <input
+                                    id="shipping-name"
+                                    name="shippingName"
+                                    type="text"
+                                    class="form-control"
+                                    required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="shipping-address" class="form-label">Adresse</label>
+                            <input
+                                    id="shipping-address"
+                                    name="shippingAddress"
+                                    type="text"
+                                    class="form-control"
+                                    required
+                            >
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-5">
+                                <label for="shipping-postal" class="form-label">Post nr.</label>
+                                <input
+                                        id="shipping-postal"
+                                        name="shippingPostal"
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                >
+                            </div>
+
+                            <div class="col-7">
+                                <label for="shipping-city" class="form-label">Bynavn</label>
+                                <input
+                                        id="shipping-city"
+                                        name="shippingCity"
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                >
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-form__section" aria-labelledby="billing-title">
+                        <h2 id="billing-title" class="checkout-form__title">
+                            Faktureringsadresse
+                        </h2>
+
+                        <div class="mb-3">
+                            <label for="billing-address" class="form-label">Adresse</label>
+                            <input
+                                    id="billing-address"
+                                    name="billingAddress"
+                                    type="text"
+                                    class="form-control"
+                                    required
+                            >
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-5">
+                                <label for="billing-postal" class="form-label">Post nr.</label>
+                                <input
+                                        id="billing-postal"
+                                        name="billingPostal"
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                >
+                            </div>
+
+                            <div class="col-7">
+                                <label for="billing-city" class="form-label">Bynavn</label>
+                                <input
+                                        id="billing-city"
+                                        name="billingCity"
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                >
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-form__section" aria-labelledby="payment-title">
+                        <h2 id="payment-title" class="checkout-form__title">
+                            Kortoplysninger
+                        </h2>
+
+                        <div class="mb-3">
+                            <label for="card-number" class="form-label">Kortnummer</label>
+                            <input
+                                    id="card-number"
+                                    name="cardNumber"
+                                    type="text"
+                                    class="form-control"
+                                    inputmode="numeric"
+                                    autocomplete="cc-number"
+                                    required
+                            >
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <label for="card-expiry" class="form-label">Udløbsdato</label>
+                                <input
+                                        id="card-expiry"
+                                        name="cardExpiry"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="MM/ÅÅ"
+                                        autocomplete="cc-exp"
+                                        required
+                                >
+                            </div>
+
+                            <div class="col-6">
+                                <label for="card-cvc" class="form-label">CVC</label>
+                                <input
+                                        id="card-cvc"
+                                        name="cardCvc"
+                                        type="text"
+                                        class="form-control"
+                                        inputmode="numeric"
+                                        autocomplete="cc-csc"
+                                        required
+                                >
+                            </div>
+                        </div>
+                    </section>
+
+                    <button type="submit" class="btn btn-primary checkout-form__button">
+                        Gennemfør betaling
+                    </button>
+
+                    <p id="checkout-feedback" class="small text-center mt-3 d-none" aria-live="polite">
+                        <!-- Injected by checkout.js -->
+                    </p>
+
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/cartStorage.js"></script>
+<script src="js/includes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/checkout.js"></script>
 
 </body>
 </html>
