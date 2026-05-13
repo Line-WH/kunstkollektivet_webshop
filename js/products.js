@@ -140,5 +140,40 @@ const products = [
         }
     },
 
+    {
+        slug: "faldne-sole",
+        title: "Faldne sole",
+        artist: "OMK",
+
+        description: "Bring noget varme og ro ind i hjemmet med det her skønne lille værk af Nana Rooed. Det er perfekt til hvor som helst hvor du mangler farve og roligt spil på din væg.",
+        artistDescription: "Nana Rooed er en kreativ sjæl som holder af at bruge oliekridt og klasiske tucsher. Hendes udtryk bærer derfor også meget præg af teksture og stemninger.",
+        materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+
+        images: [
+            {
+                src: "images/faldne-sole-1.jpg",
+                alt: "print af faldne sole"
+            },
+            {
+                src: "images/faldne-sole-2.jpg",
+                alt: "print af faldne sole i ramme"
+            },
+            {
+                src: "images/faldne-sole-3.jpg",
+                alt: "print af faldne sole på væggen"
+            },
+            {
+                src: "images/faldne-sole-4.jpg",
+                alt: "detaljeret print af faldne sole"
+            }
+        ],
+
+        video: {
+            src: "video/faldne-video.mp4",
+            type: "video/mp4",
+            label: "produktvideo"
+        }
+    },
+
 
 ];
