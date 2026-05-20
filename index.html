@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -23,6 +24,140 @@
 <div id="site-header" class="sticky-top"></div>
 
     <main>
+
+        <section class="video-hero" id="hero" aria-labelledby="hero-title">
+            <div class="video-hero__media" aria-hidden="true">
+                <video autoplay muted loop playsinline>
+                    <source src="video/hero.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-hero__overlay" aria-hidden="true"></div>
+
+            <div class="container video-hero__content">
+                <div class="video-hero__text-box">
+                    <h1 class="video-hero__title fw-bold text-center" id="hero-title">
+                        KunstKollektivet
+                        <span
+                                class="typewriter"
+                                data-typewriter
+                                aria-hidden="true"
+                        ></span>
+                    </h1>
+
+                    <span class="visually-hidden">
+                KunstKollektivet sælger prints skabt af mennesker, kurateret med omhu og printet lokalt.
+            </span>
+
+                    <a href="shop.html" class="btn btn-is video-hero__cta fw-bold fs-5 text-rust">
+                        Se alle prints
+                    </a>
+                </div>
+            </div>
+        </section>
+                    <!--<div class="col-lg-6">
+                        <div class="animated-logo-card">
+                            <div
+                                    class="animated-logo"
+                                    data-outline-src="logo/outline.svg"
+                            >
+                                <div class="animated-logo__outline" aria-hidden="true"></div>
+
+                                <img
+                                        src="logo/bomaerke_brun.svg"
+                                        alt="KunstKollektivet bomærke"
+                                        class="animated-logo__fill"
+                                >
+                            </div>
+                        </div>
+                    </div>-->
+
+        <section class="news-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="fw-bold pb-3">Nyheder</h2>
+                        <h3>Se de nyeste værker</h3>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/matcha_1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Pige med matcha</p>
+                            <p style="opacity: 70%;">Nana Rooed</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/abstrakte-bjerge-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Abstrakte bjerge 2</p>
+                            <p style="opacity: 70%;">Nik</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/nordisk-kald-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Nordisk kald</p>
+                            <p style="opacity: 70%;">Heidi Larsen</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/blå-slange-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Blå slange</p>
+                            <p style="opacity: 70%;">Annie</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/faldne-sole-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Faldne sole</p>
+                            <p style="opacity: 70%;">OMK</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="inspo-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="fw-bold pb-3">Inspiration</h2>
+                        <h3>Udforsk vores stilarter</h3>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/IMG_9058.JPEG" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Alkoholbaseret tusch</p>
+                            <p style="opacity: 70%;">Nana Rooed</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Linocut</p>
+                            <p style="opacity: 70%;">Nik</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Oliekridt</p>
+                            <p style="opacity: 70%;">Heidi Larsen</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2 pb-3 card">
+                        <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p>Digital art</p>
+                            <p style="opacity: 70%;">Annie</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
         <section class="value-section">
@@ -52,7 +187,10 @@
 
 <div id="site-footer"></div>
 
+<script src="js/hero.js"></script>
+<script src="js/cartStorage.js"></script>
 <script src="js/includes.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
