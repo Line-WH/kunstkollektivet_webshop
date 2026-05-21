@@ -8,6 +8,7 @@ const products = [
         description: "Bring noget varme og ro ind i hjemmet med det her skønne lille værk af Nana Rooed. Det er perfekt til hvor som helst hvor du mangler farve og roligt spil på din væg.",
         artistDescription: "Nana Rooed er en kreativ sjæl som holder af at bruge oliekridt og klasiske tucsher. Hendes udtryk bærer derfor også meget præg af teksture og stemninger.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+        tags: ["pige", "matcha", "varm", "farverig", "rolig", "håndtegnet"],
 
         images: [
             {
@@ -50,6 +51,7 @@ const products = [
         description: "Et enkelt og roligt bjergmotiv bygget op af bløde farveflader, hvor solen hænger lavt over landskabet. Værket har et næsten drømmende udtryk og passer godt til rum, hvor der gerne må være varme, ro og et strejf af natur uden for mange detaljer.",
         artistDescription: "Nik arbejder med grafiske landskaber, enkle former og varme farvekombinationer. Udtrykket er minimalistisk, men stadig legende, med fokus på stemning, balance og genkendelige naturmotiver.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+        tags: ["bjerge", "lyserød", "landskab", "digital", "abstrakt", "kontrast"],
 
         images: [
             {
@@ -85,6 +87,7 @@ const products = [
         description: "Et detaljerigt og mytisk værk med tydelige nordiske referencer. Figuren står som et stille centrum omgivet af natur, dyr og symboler, der giver billedet en rituel og fortællende kvalitet. Et print for dig, der holder af folklore, mystik og håndtegnede detaljer.",
         artistDescription: "Heidi Larsen skaber værker med inspiration fra nordisk natur, symbolik og gamle fortællinger. Hendes stil kombinerer det dekorative med det stemningsfulde og inviterer beskueren til at finde nye detaljer over tid.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+        tags: ["heks", "mono", "dyr", "håndtegnet", "fantasy", "sorthvid"],
 
         images: [
             {
@@ -120,6 +123,7 @@ const products = [
         description: "Et legende og moderne motiv, hvor en blå slange slynger sig mellem bløde former og varme kontrastfarver. Værket har en let, grafisk energi og fungerer godt som et farverigt blikfang i hjemmet uden at virke tungt eller dominerende.",
         artistDescription: "Annie arbejder med organiske former, stærke farveflader og et humoristisk grafisk udtryk. Hendes værker føles spontane og levende, men er samtidig komponeret med sans for rytme og visuel balance.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+        tags: ["slange", "blå", "dyr", "digital", "fantasy", "kold"],
 
         images: [
             {
@@ -155,6 +159,7 @@ const products = [
         description: "Et mørkt og atmosfærisk værk, hvor glødende sole bryder frem i et landskab præget af skygge, varme og stilhed. Motivet føles næsten som et øjeblik fra en større fortælling — dramatisk, filmisk og en smule ildevarslende.",
         artistDescription: "OMK arbejder med stemningsmættede, digitale universer, hvor lys og mørke spiller en central rolle. Værkerne har ofte en fortællende kvalitet og balancerer mellem fantasy, natur og cinematisk mystik.",
         materials: "Printet produceres lokalt i Danmark på kvalitetspapir. Leveringstid og fragt vises ved checkout.",
+        tags: ["sole", "mørkt", "dyr", "digital", "fantasy", "intenst"],
 
         images: [
             {

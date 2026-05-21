@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+
+    <title>Søg | KunstKollektivet</title>
+
+    <meta name="robots" content="All">
+    <meta name="author" content="KunstKollektivet">
+    <meta name="copyright" content="KunstKollektivet">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+    >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div id="site-header" class="sticky-top"></div>
+
+<main class="search-page py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-lg-7 text-center">
+                <h1 class="fw-bold">Søg i prints</h1>
+                <p>Søg efter titel, kunstner, stil, materiale eller nøgleord.</p>
+
+                <form id="search-form" class="mt-4" role="search">
+                    <label for="search-input" class="visually-hidden">
+                        Søg efter prints
+                    </label>
+
+                    <div class="input-group">
+                        <input
+                                id="search-input"
+                                class="form-control"
+                                type="search"
+                                name="q"
+                                placeholder="Søg fx matcha, slange, digital art..."
+                                autocomplete="off"
+                        >
+
+                        <button class="btn btn-rust" type="submit">
+                            Søg
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <p id="search-summary" class="text-center fw-bold mb-4"></p>
+
+        <div id="search-results" class="row g-4"></div>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cartStorage.js"></script>
+<script src="js/includes.js"></script>
+<script src="js/search.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

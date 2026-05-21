@@ -32,20 +32,31 @@ function setActiveNavLink() {
 
 function initHeaderScrollState() {
     const header = document.querySelector(".site-header");
+    const swapImages = document.querySelectorAll(".js-header-swap-img");
 
-    if (!header || header.dataset.headerInitialized === "true") return;
+    if (!header) {
+        return;
+    }
 
-    header.dataset.headerInitialized = "true";
+    function updateHeaderOnScroll() {
+        const isScrolled = window.scrollY > 10;
 
-    const updateHeaderState = () => {
-        header.classList.toggle("site-header--scrolled", window.scrollY > 8);
-    };
+        header.classList.toggle("site-header--scrolled", isScrolled);
 
-    updateHeaderState();
+        swapImages.forEach((img) => {
+            const defaultSrc = img.dataset.srcDefault;
+            const scrolledSrc = img.dataset.srcScrolled;
 
-    window.addEventListener("scroll", updateHeaderState, {
-        passive: true
-    });
+            if (!defaultSrc || !scrolledSrc) {
+                return;
+            }
+
+            img.src = isScrolled ? scrolledSrc : defaultSrc;
+        });
+    }
+
+    updateHeaderOnScroll();
+    window.addEventListener("scroll", updateHeaderOnScroll);
 }
 
 async function initPartials() {

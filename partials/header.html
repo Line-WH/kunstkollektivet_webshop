@@ -4,26 +4,42 @@
 
             <div class="col-auto">
                 <a class="site-header__logo" href="index.html" aria-label="Gå til forsiden">
-                    <img src="/logo/logo_dark.png" alt="KunstKollektivet">
+                    <img
+                            class="js-header-swap-img"
+                            src="logo/logo_dark.png"
+                            data-src-default="logo/logo_dark.png"
+                            data-src-scrolled="logo/logo_lys.png"
+                            alt="KunstKollektivet"
+                    >
                 </a>
             </div>
 
             <div class="col d-none d-md-block">
                 <nav class="site-header__nav" aria-label="Primær navigation">
                     <a href="index.html" data-nav-link>Hjem</a>
-                    <a href="news.html" data-nav-link>Nyheder</a>
+                    <a href="index.html#nyheder-section" data-nav-link>Nyheder</a>
                     <a href="shop.html" data-nav-link>Alle prints</a>
                 </nav>
             </div>
 
             <div class="col-auto ms-auto">
                 <div class="d-flex align-items-center gap-2">
-                    <a href="" class="site-header__icon-link" aria-label="Søg">
-                        <img src="/icons/icons8-search-32.png" alt="">
+                    <a href="search.html" class="site-header__icon-link" aria-label="Søg">
+                        <img class="js-header-swap-img"
+                             data-src-default="icons/icons8-search-32.png"
+                             data-src-scrolled="icons/icons8-search-light-32.png"
+                             alt="">
                     </a>
 
                     <a href="cart.html" class="site-header__icon-link site-header__cart-link" aria-label="Kurv">
-                        <img src="/icons/icons8-bag-32.png" alt="">
+                        <img
+                                class="js-header-swap-img"
+                                src="icons/icons8-bag-32.png"
+                                data-src-default="icons/icons8-bag-32.png"
+                                data-src-scrolled="icons/icons8-bag-light-32.png"
+                                alt=""
+                        >
+
 
                         <span id="cart-count" class="site-header__cart-count d-none">
         0
@@ -51,7 +67,7 @@
 
     <nav class="collapse site-header__mobile-nav" id="mobileNavigation" aria-label="Mobil navigation">
         <a href="index.html" data-nav-link>Hjem</a>
-        <a href="news.html" data-nav-link>Nyheder</a>
+        <a href="index.html#nyheder-section" data-nav-link>Nyheder</a>
         <a href="shop.html" data-nav-link>Alle prints</a>
     </nav>
 </header>
