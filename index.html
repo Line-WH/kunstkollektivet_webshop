@@ -22,7 +22,22 @@
 <body>
 
 <div id="site-header" class="sticky-top"></div>
+<!--<div class="col-lg-6">
+                        <div class="animated-logo-card">
+                            <div
+                                    class="animated-logo"
+                                    data-outline-src="logo/outline.svg"
+                            >
+                                <div class="animated-logo__outline" aria-hidden="true"></div>
 
+                                <img
+                                        src="logo/bomaerke_brun.svg"
+                                        alt="KunstKollektivet bomærke"
+                                        class="animated-logo__fill"
+                                >
+                            </div>
+                        </div>
+                    </div>-->
     <main>
 
         <section class="video-hero" id="hero" aria-labelledby="hero-title">
@@ -58,106 +73,194 @@
                 </div>
             </div>
         </section>
-                    <!--<div class="col-lg-6">
-                        <div class="animated-logo-card">
-                            <div
-                                    class="animated-logo"
-                                    data-outline-src="logo/outline.svg"
-                            >
-                                <div class="animated-logo__outline" aria-hidden="true"></div>
 
-                                <img
-                                        src="logo/bomaerke_brun.svg"
-                                        alt="KunstKollektivet bomærke"
-                                        class="animated-logo__fill"
-                                >
-                            </div>
-                        </div>
-                    </div>-->
 
         <section class="news-section" id="nyheder-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="fw-bold pb-3">Nyheder</h2>
-                        <h3>Se de nyeste værker</h3>
+                <div class="row mb-4">
+                    <div class="col-12 col-lg-8">
+                        <p class="section-eyebrow">Nye værker</p>
+                        <h2 class="fw-bold">Se vores nyeste prints</h2>
+                        <p class="news-section__intro">
+                            Friske farver og naturmotiver til at gøre dit hjem forårsklart
+                        </p>
                     </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/matcha_1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Pige med matcha</p>
-                            <p style="opacity: 70%;">Nana Rooed</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/abstrakte-bjerge-1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Abstrakte bjerge 2</p>
-                            <p style="opacity: 70%;">Nik</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/nordisk-kald-1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Nordisk kald</p>
-                            <p style="opacity: 70%;">Heidi Larsen</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/blå-slange-1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Blå slange</p>
-                            <p style="opacity: 70%;">Annie</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/faldne-sole-1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Faldne sole</p>
-                            <p style="opacity: 70%;">OMK</p>
-                        </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <article class="highlight-print-card">
+                            <a href="product.html?slug=pige-med-matcha" class="highlight-print-card__link">
+                                <div class="highlight-print-card__image-wrap">
+                                    <img
+                                            src="images/pige-matcha.jpg"
+                                            alt="Pige med matcha"
+                                            class="highlight-print-card__image"
+                                    >
+                                </div>
+
+                                <div class="highlight-print-card__body">
+                                    <p class="highlight-print-card__badge">Nyhed</p>
+                                    <h3 class="highlight-print-card__title">Pige med matcha</h3>
+                                    <p class="highlight-print-card__artist">Nana Rooed</p>
+                                    <p class="highlight-print-card__text">
+                                        Et roligt og legende print med varme toner og en blød hverdagsstemning.
+                                    </p>
+
+                                    <div class="highlight-print-card__footer">
+                                        <p class="highlight-print-card__price">Fra 400 kr.</p>
+                                        <span class="highlight-print-card__cta">Se print</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
                     </div>
 
+                    <div class="col-12 col-lg-4">
+                        <article class="highlight-print-card">
+                            <a href="product.html?slug=abstrakte-bjerge-2" class="highlight-print-card__link">
+                                <div class="highlight-print-card__image-wrap">
+                                    <img
+                                            src="images/abstrakte-bjerge.jpg"
+                                            alt="Abstrakte bjerge 2"
+                                            class="highlight-print-card__image"
+                                    >
+                                </div>
+
+                                <div class="highlight-print-card__body">
+                                    <p class="highlight-print-card__badge">Nyhed</p>
+                                    <h3 class="highlight-print-card__title">Abstrakte bjerge 2</h3>
+                                    <p class="highlight-print-card__artist">Nik</p>
+                                    <p class="highlight-print-card__text">
+                                        Et grafisk landskab med skarpe former, varme farver og enkel komposition.
+                                    </p>
+
+                                    <div class="highlight-print-card__footer">
+                                        <p class="highlight-print-card__price">Fra 400 kr.</p>
+                                        <span class="highlight-print-card__cta">Se print</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <article class="highlight-print-card">
+                            <a href="product.html?slug=nordisk-kald" class="highlight-print-card__link">
+                                <div class="highlight-print-card__image-wrap">
+                                    <img
+                                            src="images/nordisk-kald.jpg"
+                                            alt="Nordisk kald"
+                                            class="highlight-print-card__image"
+                                    >
+                                </div>
+
+                                <div class="highlight-print-card__body">
+                                    <p class="highlight-print-card__badge">Nyhed</p>
+                                    <h3 class="highlight-print-card__title">Nordisk kald</h3>
+                                    <p class="highlight-print-card__artist">Heidi Larsen</p>
+                                    <p class="highlight-print-card__text">
+                                        Et stemningsfuldt sort-hvidt print med nordisk mystik og stærk karakter.
+                                    </p>
+
+                                    <div class="highlight-print-card__footer">
+                                        <p class="highlight-print-card__price">Fra 400 kr.</p>
+                                        <span class="highlight-print-card__cta">Se print</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="shop.html" class="btn btn-rust">
+                        Se alle prints
+                    </a>
                 </div>
             </div>
         </section>
 
         <section class="inspo-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="fw-bold pb-3">Inspiration</h2>
-                        <h3>Udforsk vores stilarter</h3>
+                <div class="row mb-4">
+                    <div class="col-12 col-lg-7">
+                        <p class="section-eyebrow">Inspiration</p>
+                        <h2 class="fw-bold">Udforsk vores stilarter</h2>
+                        <p class="inspo-section__intro">
+                            Bliv klogere på teknikkerne, materialerne og udtrykkene bag værkerne.
+                        </p>
                     </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/IMG_9058.JPEG" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Alkoholbaseret tusch</p>
-                            <p style="opacity: 70%;">Nana Rooed</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Linocut</p>
-                            <p style="opacity: 70%;">Nik</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Oliekridt</p>
-                            <p style="opacity: 70%;">Heidi Larsen</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-2 pb-3 card">
-                        <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <p>Digital art</p>
-                            <p style="opacity: 70%;">Annie</p>
-                        </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <a href="inspiration-alkoholbaseret-tusch.html" class="inspo-card">
+                            <div class="inspo-card__image-wrap">
+                                <img src="images/IMG_9058.JPEG" alt="Alkoholbaseret tusch" class="inspo-card__image">
+                            </div>
+
+                            <div class="inspo-card__body">
+                                <p class="inspo-card__label">Teknik</p>
+                                <h3 class="inspo-card__title">Alkoholbaseret tusch</h3>
+                                <p class="inspo-card__text">
+                                    Farvestærke illustrationer med bløde overgange og markerede former.
+                                </p>
+                                <span class="inspo-card__cta">Læs mere</span>
+                            </div>
+                        </a>
                     </div>
 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <a href="inspiration-linocut.html" class="inspo-card">
+                            <div class="inspo-card__image-wrap">
+                                <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg" alt="Linocut" class="inspo-card__image">
+                            </div>
+
+                            <div class="inspo-card__body">
+                                <p class="inspo-card__label">Teknik</p>
+                                <h3 class="inspo-card__title">Linocut</h3>
+                                <p class="inspo-card__text">
+                                    Grafiske tryk med håndskårne former, tydelige kontraster og tekstur.
+                                </p>
+                                <span class="inspo-card__cta">Læs mere</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <a href="inspiration-oliekridt.html" class="inspo-card">
+                            <div class="inspo-card__image-wrap">
+                                <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg" alt="Oliekridt" class="inspo-card__image">
+                            </div>
+
+                            <div class="inspo-card__body">
+                                <p class="inspo-card__label">Materiale</p>
+                                <h3 class="inspo-card__title">Oliekridt</h3>
+                                <p class="inspo-card__text">
+                                    Et sanseligt udtryk med tydelige strøg, dyb farve og taktil overflade.
+                                </p>
+                                <span class="inspo-card__cta">Læs mere</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <a href="inspiration-digital-art.html" class="inspo-card">
+                            <div class="inspo-card__image-wrap">
+                                <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg" alt="Digital art" class="inspo-card__image">
+                            </div>
+
+                            <div class="inspo-card__body">
+                                <p class="inspo-card__label">Stilart</p>
+                                <h3 class="inspo-card__title">Digital art</h3>
+                                <p class="inspo-card__text">
+                                    Moderne værker skabt digitalt, men stadig med kunstnerens hånd og proces i centrum.
+                                </p>
+                                <span class="inspo-card__cta">Læs mere</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -165,22 +268,65 @@
 
         <section class="value-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="fw-bold pb-4">Vores værdier</h2>
+                <div class="row g-5 align-items-center">
+
+                    <div class="col-12 col-lg-5">
+                        <div class="value-section__image-wrap">
+                            <img
+                                    src="images/young-woman-working-her-worshop.jpg"
+                                    alt="Print og kunstmaterialer på et arbejdsbord"
+                                    class="value-section__image"
+                                    loading="lazy"
+                            >
+                        </div>
                     </div>
-                    <div class="col-12 col-lg-4 pb-3">
-                        <h3>Fællesskab</h3>
-                        <p>KunstKollektivet er bygget op omkring mennesker. Kunder, kunstnere og samarbejdspartnere er ikke bare en del af virksomheden. Uden dem ville vi ikke findes.</p>
+
+                    <div class="col-12 col-lg-7">
+                        <p class="section-eyebrow">Vores værdier</p>
+                        <h2 class="value-section__title fw-bold">
+                            Kunst skabt med omtanke
+                        </h2>
+
+                        <div class="value-list">
+                            <article class="value-item">
+                                <span class="value-item__number">01</span>
+                                <div>
+                                    <h3>Fællesskab</h3>
+                                    <p>
+                                        KunstKollektivet er bygget op omkring mennesker. Kunder,
+                                        kunstnere og samarbejdspartnere er ikke bare en del af
+                                        virksomheden. Uden dem ville vi ikke findes.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="value-item">
+                                <span class="value-item__number">02</span>
+                                <div>
+                                    <h3>Ansvarlig produktion</h3>
+                                    <p>
+                                        Print kræver ressourcer, og det tager vi ansvar for. Derfor
+                                        er vi transparente omkring, hvordan vi laver vores produkter,
+                                        og vi arbejder løbende på at bruge mere ansvarlige materialer,
+                                        emballage og processer.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="value-item">
+                                <span class="value-item__number">03</span>
+                                <div>
+                                    <h3>Transparens</h3>
+                                    <p>
+                                        Vi sælger ikke AI-genererede produkter. Vores værker er skabt
+                                        af mennesker, og vi ønsker at gøre processen bag mere tydelig,
+                                        så både kunder og kunstnere kan føle sig mere trygge.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="col-12 col-lg-4 pb-3">
-                        <h3>Ansvarlig produktion</h3>
-                        <p>Print kræver resourcer og det tager vi ansvar for. Derfor er vi transparente i hvordan vi laver vores produkter og vi arbejder løbende på at bruge mere ansvarlige materialer, emballage og processer.</p>
-                    </div>
-                    <div class="col-12 col-lg-4 pb-3">
-                        <h3>Transparens</h3>
-                        <p>Vi sælger ikke AI-genererede produkter. Vores værker er skabt af mennesker og vi ønsker at gøre processen bag mere tydelig, så både kunder og kunstnere kan føle sig mere trygge.</p>
-                    </div>
+
                 </div>
             </div>
         </section>

@@ -76,7 +76,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   overflow: hidden;
   isolation: isolate;
   background-color: $rust;
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
 
 .video-hero__media {
@@ -181,14 +181,337 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //nyheder sektion
 
-.card {
-  width: 15rem;
-  border: none;
-  background-color: transparent;
+.news-section {
+  padding: 4rem 0;
 }
 
-#nyheder-section {
-  scroll-margin-top: 6rem;
+.section-eyebrow {
+  margin-bottom: 0.5rem;
+  font-family: $font-brand;
+  font-weight: 700;
+  color: rgba($rust, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.news-section__intro {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba($rust, 0.8);
+}
+
+.highlight-print-card {
+  height: 100%;
+}
+
+.highlight-print-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $rust;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 1.25rem;
+  transition:
+          transform 180ms ease,
+          opacity 180ms ease;
+}
+
+.highlight-print-card__link:hover,
+.highlight-print-card__link:focus-visible {
+  color: $rust;
+  transform: translateY(-0.25rem);
+}
+
+.highlight-print-card__image-wrap {
+  padding: 0;
+  background: transparent;
+}
+
+.highlight-print-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  background-color: white;
+  box-shadow: 0 0.5rem 1.25rem rgba($rust, 0.18);
+}
+
+.highlight-print-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.25rem 0 0;
+}
+
+.highlight-print-card__badge {
+  align-self: flex-start;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background-color: $rust;
+  color: $canvas;
+  font-family: $font-brand;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.highlight-print-card__title {
+  margin: 0 0 0.25rem;
+  font-family: $font-body;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $rust;
+}
+
+.highlight-print-card__artist {
+  margin: 0 0 0.9rem;
+  color: rgba($rust, 0.7);
+}
+
+.highlight-print-card__text {
+  margin: 0;
+  color: rgba($rust, 0.85);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.highlight-print-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.highlight-print-card__price {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.highlight-print-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background-color: $is;
+  color: $rust;
+  font-family: $font-brand;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.highlight-print-card__link:hover .highlight-print-card__cta,
+.highlight-print-card__link:focus-visible .highlight-print-card__cta {
+  background-color: $rust;
+  color: $canvas;
+}
+
+@media (max-width: 767.98px) {
+  .news-section {
+    padding: 3rem 0;
+  }
+
+  .highlight-print-card__link {
+    border-radius: 1rem;
+  }
+
+  .highlight-print-card__body {
+    padding: 1rem;
+  }
+
+  .highlight-print-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+//inspiration sektion
+
+.inspo-section {
+  padding: 4rem 0;
+}
+
+.inspo-section__intro {
+  max-width: 36rem;
+  margin: 0;
+  color: rgba($rust, 0.8);
+}
+
+.inspo-card {
+  display: block;
+  height: 100%;
+  color: $rust;
+  text-decoration: none;
+  padding-top: 0.75rem;
+  transition:
+          transform 180ms ease,
+          border-color 180ms ease;
+}
+
+.inspo-card:hover,
+.inspo-card:focus-visible {
+  color: $rust;
+  transform: translateY(-0.2rem);
+}
+
+.inspo-card__image-wrap {
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgba($rust, 0.08);
+}
+
+.inspo-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.inspo-card:hover .inspo-card__image,
+.inspo-card:focus-visible .inspo-card__image {
+  transform: scale(1.04);
+}
+
+.inspo-card__label {
+  margin: 0 0 0.35rem;
+  font-family: $font-brand;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba($rust, 0.65);
+}
+
+.inspo-card__title {
+  margin: 0 0 0.5rem;
+  font-family: $font-body;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $rust;
+}
+
+.inspo-card__text {
+  margin: 0 0 1rem;
+  color: rgba($rust, 0.8);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.inspo-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: $font-brand;
+  font-weight: 700;
+  color: $rust;
+}
+
+.inspo-card__cta::after {
+  content: "→";
+  transition: transform 180ms ease;
+}
+
+.inspo-card:hover .inspo-card__cta::after,
+.inspo-card:focus-visible .inspo-card__cta::after {
+  transform: translateX(0.25rem);
+}
+
+//værdi sektion
+
+.value-section {
+  padding: 5rem 0;
+}
+
+.value-section__image-wrap {
+  position: relative;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.value-section__image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  border: 1px solid rgba($rust, 0.22);
+  border-radius: 1.25rem;
+  z-index: -1;
+}
+
+.value-section__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 2.5rem rgba($rust, 0.14);
+}
+
+.value-section__title {
+  max-width: 32rem;
+  margin-bottom: 2rem;
+}
+
+.value-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.value-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba($rust, 0.22);
+}
+
+.value-item__number {
+  font-family: $font-brand;
+  font-weight: 700;
+  color: rgba($rust, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.value-item h3 {
+  margin-bottom: 0.45rem;
+  font-family: $font-body;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $rust;
+}
+
+.value-item p {
+  max-width: 42rem;
+  margin: 0;
+  color: rgba($rust, 0.82);
+  line-height: 1.55;
+}
+
+@media (max-width: 767.98px) {
+  .value-section {
+    padding: 4rem 0;
+  }
+
+  .value-section__image-wrap {
+    max-width: none;
+  }
+
+  .value-section__image-wrap::before {
+    inset: 0.75rem -0.5rem -0.75rem 0.5rem;
+  }
+
+  .value-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
 }
 
 //shop side styling
