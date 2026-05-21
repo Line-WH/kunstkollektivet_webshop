@@ -70,12 +70,13 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .video-hero {
   position: relative;
-  min-height: calc(100vh - 84px);
+  height: 70vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   isolation: isolate;
   background-color: $rust;
+  margin-bottom: 8rem;
 }
 
 .video-hero__media {
@@ -595,18 +596,31 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   gap: 2rem;
 }
 
+.site-header__nav a {
+  font-family: $font-brand;
+  font-weight: 700;
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
 .site-header__mobile-nav {
-  background-color: $canvas;
+  background-color: inherit;
+  color: inherit;
   border-bottom: 1px solid rgba($rust, 0.15);
   padding: 0.75rem 1rem 1rem;
+}
 
+.site-header__mobile-nav.show,
+.site-header__mobile-nav.collapsing {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.site-header__nav a,
 .site-header__mobile-nav a {
+  display: block;
+  padding: 0.6rem 0;
   font-family: $font-brand;
   font-weight: 700;
   color: inherit;
@@ -650,8 +664,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 }
 
 .site-header__mobile-nav {
-  background-color: $canvas;
-  border-bottom: 1px solid rgba($rust, 0.15);
+  background-color: inherit;
+  color: inherit;
   padding: 0.75rem 1rem 1rem;
 
   display: flex;
