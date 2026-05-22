@@ -298,8 +298,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   justify-content: center;
   padding: 0.55rem 1rem;
   border-radius: 999px;
-  background-color: $is;
-  color: $rust;
+  background-color: $rust;
+  color: $canvas;
   font-family: $font-brand;
   font-weight: 700;
   font-size: 0.9rem;
@@ -308,8 +308,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .highlight-print-card__link:hover .highlight-print-card__cta,
 .highlight-print-card__link:focus-visible .highlight-print-card__cta {
-  background-color: $rust;
-  color: $canvas;
+  background-color: $is;
+  color: $rust;
 }
 
 @media (max-width: 767.98px) {
@@ -439,8 +439,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .value-section__image-wrap::before {
   content: "";
   position: absolute;
-  inset: 1rem -1rem -1rem 1rem;
-  border: 1px solid rgba($rust, 0.22);
   border-radius: 1.25rem;
   z-index: -1;
 }
@@ -451,7 +449,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   display: block;
   object-fit: cover;
   border-radius: 1.25rem;
-  box-shadow: 0 1rem 2.5rem rgba($rust, 0.14);
 }
 
 .value-section__title {
