@@ -2,12 +2,17 @@
 <html lang="da">
 <head>
 	<meta charset="utf-8">
-	
-	<title>KunstKollektivet-forside</title>
-	
-	<meta name="robots" content="All">
-	<meta name="author" content="Udgiver">
-	<meta name="copyright" content="Information om copyright">
+
+    <title>KunstKollektivet | Kunstprints fra danske kunstnere</title>
+
+    <meta
+            name="description"
+            content="Køb kuraterede kunstprints skabt af mennesker, printet lokalt i Danmark og udvalgt med omtanke for kunstnere, kvalitet og hjem."
+    >
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="KunstKollektivet">
+    <meta name="copyright" content="KunstKollektivet">
 	
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -20,6 +25,9 @@
 </head>
 
 <body>
+
+<a href="#main-content" class="visually-hidden-focusable skip-link">Spring til indhold</a>
+
 
 <div id="site-header" class="sticky-top"></div>
 <!--<div class="col-lg-6">
@@ -38,11 +46,15 @@
                             </div>
                         </div>
                     </div>-->
-    <main>
+    <main id="main-content">
 
-        <section class="video-hero" id="hero" aria-labelledby="hero-title">
+        <section class="video-hero"
+                 id="hero"
+                 aria-labelledby="hero-title"
+                 aria-describedby="hero-description">
+
             <div class="video-hero__media" aria-hidden="true">
-                <video autoplay muted loop playsinline>
+                <video autoplay muted loop playsinline preload="metadata" poster="" tabindex="-1">
                     <source src="video/hero.mp4" type="video/mp4">
                 </video>
             </div>
@@ -60,12 +72,9 @@
                         ></span>
                     </h1>
 
-                    <span class="visually-hidden">
+                    <p id="hero-description " class="visually-hidden">
                 KunstKollektivet sælger prints skabt af mennesker, kurateret med omhu og printet lokalt.
-            </span>
-
-                    <br>
-                    <br>
+            </p>
 
                     <a href="shop.html" class="btn btn-is video-hero__cta fw-bold fs-5 text-rust">
                         Se alle prints
@@ -75,7 +84,7 @@
         </section>
 
 
-        <section class="news-section" id="nyheder-section">
+        <section class="news-section" id="nyheder-section" aria-labelledby="nye-prints-titel">
             <div class="container">
                 <div class="row mb-4">
                     <div class="col-12 col-lg-8">
@@ -94,7 +103,7 @@
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/pige-matcha.jpg"
-                                            alt="Pige med matcha"
+                                            alt=""
                                             class="highlight-print-card__image"
                                     >
                                 </div>
@@ -122,7 +131,7 @@
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/abstrakte-bjerge.jpg"
-                                            alt="Abstrakte bjerge 2"
+                                            alt=""
                                             class="highlight-print-card__image"
                                     >
                                 </div>
@@ -150,7 +159,7 @@
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/nordisk-kald.jpg"
-                                            alt="Nordisk kald"
+                                            alt=""
                                             class="highlight-print-card__image"
                                     >
                                 </div>
@@ -175,12 +184,12 @@
             </div>
         </section>
 
-        <section class="inspo-section">
+        <section class="inspo-section" aria-labelledby="inspiration-titel">
             <div class="container">
                 <div class="row mb-4">
                     <div class="col-12 col-lg-7">
                         <p class="section-eyebrow">Inspiration</p>
-                        <h2 class="fw-bold">Udforsk vores stilarter</h2>
+                        <h2 class="fw-bold" id="inspiration-titel">Udforsk vores stilarter</h2>
                         <p class="inspo-section__intro">
                             Bliv klogere på teknikkerne, materialerne og udtrykkene bag værkerne.
                         </p>
@@ -191,7 +200,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="blog.html#blogpost-1" class="inspo-card">
                             <div class="inspo-card__image-wrap">
-                                <img src="images/IMG_9058.JPEG" alt="Alkoholbaseret tusch" class="inspo-card__image">
+                                <img src="images/IMG_9058.JPEG" alt="Alkoholbaseret tuscher på papir" class="inspo-card__image">
                             </div>
 
                             <div class="inspo-card__body">
@@ -208,7 +217,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="blog.html#blogpost-2" class="inspo-card">
                             <div class="inspo-card__image-wrap">
-                                <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg" alt="Linocut" class="inspo-card__image">
+                                <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg" alt="hånd som skærer linoliumstryk" class="inspo-card__image">
                             </div>
 
                             <div class="inspo-card__body">
@@ -225,7 +234,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="blog.html#blogpost-3" class="inspo-card">
                             <div class="inspo-card__image-wrap">
-                                <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg" alt="Oliekridt" class="inspo-card__image">
+                                <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg" alt="closeup billede af oliekridt i stærke farver" class="inspo-card__image">
                             </div>
 
                             <div class="inspo-card__body">
@@ -242,7 +251,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="blog.html#blogpost-4" class="inspo-card">
                             <div class="inspo-card__image-wrap">
-                                <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg" alt="Digital art" class="inspo-card__image">
+                                <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg" alt="Digital kunstner sidder ved sin arbejdsplads" class="inspo-card__image">
                             </div>
 
                             <div class="inspo-card__body">
@@ -260,7 +269,7 @@
         </section>
 
 
-        <section class="value-section">
+        <section class="value-section" aria-labelledby="værdier-titel">
             <div class="container">
                 <div class="row g-5 align-items-center">
 
@@ -268,7 +277,7 @@
                         <div class="value-section__image-wrap">
                             <img
                                     src="images/young-woman-working-her-worshop.jpg"
-                                    alt="Print og kunstmaterialer på et arbejdsbord"
+                                    alt="Kvinder som arbejder i sit malerstudie"
                                     class="value-section__image"
                                     loading="lazy"
                             >
@@ -277,13 +286,13 @@
 
                     <div class="col-12 col-lg-7">
                         <p class="section-eyebrow">Vores værdier</p>
-                        <h2 class="value-section__title fw-bold">
+                        <h2 class="value-section__title fw-bold" id="værdier-titel">
                             Kunst skabt med omtanke
                         </h2>
 
                         <div class="value-list">
                             <article class="value-item">
-                                <span class="value-item__number">01</span>
+                                <span class="value-item__number" aria-hidden="true">01</span>
                                 <div>
                                     <h3>Fællesskab</h3>
                                     <p>
@@ -295,7 +304,7 @@
                             </article>
 
                             <article class="value-item">
-                                <span class="value-item__number">02</span>
+                                <span class="value-item__number" aria-hidden="true">02</span>
                                 <div>
                                     <h3>Ansvarlig produktion</h3>
                                     <p>
@@ -308,7 +317,7 @@
                             </article>
 
                             <article class="value-item">
-                                <span class="value-item__number">03</span>
+                                <span class="value-item__number" aria-hidden="true">03</span>
                                 <div>
                                     <h3>Transparens</h3>
                                     <p>

@@ -66,6 +66,35 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+// Tilgængelighed
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+
+  padding: 0.75rem 1rem;
+
+  border-radius: 999px;
+  background-color: $rust;
+  color: $canvas;
+
+  font-family: $font-brand;
+  font-weight: 700;
+  text-decoration: none;
+
+  transform: translateY(-200%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid $is;
+  outline-offset: 4px;
+}
+
 //hero
 
 .video-hero {
@@ -874,6 +903,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //header
 
+//header
+
 .site-header {
   background-color: rgba($canvas, 0.92);
   color: $rust;
@@ -882,8 +913,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
-  box-shadow: none;
 
   transition:
           background-color 180ms ease,
@@ -899,6 +928,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   padding: 0.25rem 0;
 }
 
+// Logo
+
 .site-header__logo {
   display: inline-flex;
   align-items: center;
@@ -910,93 +941,61 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   display: block;
 }
 
-.site-header__nav {
+// Desktop navigation
+
+.site-header__desktop-nav {
   display: flex;
   justify-content: center;
-  gap: 2rem;
 }
 
-.site-header__nav a {
-  font-family: $font-brand;
-  font-weight: 700;
-  background-color: inherit;
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-header__mobile-nav {
-  background-color: inherit;
-  color: inherit;
-  border-bottom: 1px solid rgba($rust, 0.15);
-  padding: 0.75rem 1rem 1rem;
-}
-
-.site-header__mobile-nav.show,
-.site-header__mobile-nav.collapsing {
+.site-header__nav {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 2rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.site-header__mobile-nav a {
-  display: block;
-  padding: 0.6rem 0;
+.site-header__nav-link {
+  display: inline-flex;
+  align-items: center;
+
   font-family: $font-brand;
   font-weight: 700;
   color: inherit;
   text-decoration: none;
 }
+
+.site-header__nav-link:hover,
+.site-header__nav-link:focus-visible {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+// Icon links
 
 .site-header__icon-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   width: 1.65rem;
   height: 1.65rem;
+
+  color: inherit;
+  text-decoration: none;
 }
 
 .site-header__icon-link img {
   width: 100%;
   height: 100%;
-}
-
-.site-header__menu-button {
-  border: 0;
-  background: transparent;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  gap: 0.25rem;
-  line-height: 1;
-  color: inherit;
-}
-
-.site-header__menu-button span {
-  width: 1.6rem;
-  height: 2.5px;
-  background-color: currentColor;
-  border-radius: 999px;
   display: block;
 }
 
-.site-header__mobile-nav {
-  background-color: inherit;
-  color: inherit;
-  padding: 0.75rem 1rem 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.site-header__mobile-nav a {
-  display: block;
-  padding: 0.6rem 0;
-}
+// Cart counter
 
 .site-header__cart-link {
   position: relative;
@@ -1006,6 +1005,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   position: absolute;
   top: -0.35rem;
   right: -0.45rem;
+
   min-width: 1.1rem;
   height: 1.1rem;
   padding: 0 0.3rem;
@@ -1023,14 +1023,81 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   line-height: 1;
 }
 
-// Desktop
-@media (min-width: 768px) {
-  .site-header__nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
+// Menu button
 
+.site-header__menu-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: inherit;
+  line-height: 1;
+}
+
+.site-header__menu-button span {
+  width: 1.6rem;
+  height: 2.5px;
+
+  display: block;
+
+  border-radius: 999px;
+  background-color: currentColor;
+}
+
+// Mobile navigation
+
+.site-header__mobile-nav {
+  background-color: inherit;
+  color: inherit;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.site-header__mobile-nav.show,
+.site-header__mobile-nav.collapsing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.site-header__mobile-nav a {
+  display: block;
+  padding: 0.6rem 0;
+
+  font-family: $font-brand;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header__mobile-nav a:hover,
+.site-header__mobile-nav a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+// Focus states
+
+.site-header__logo:focus-visible,
+.site-header__nav-link:focus-visible,
+.site-header__icon-link:focus-visible,
+.site-header__menu-button:focus-visible,
+.site-header__mobile-nav a:focus-visible {
+  outline: 3px solid $is;
+  outline-offset: 4px;
+  border-radius: 0.5rem;
+}
+
+// Desktop/mobile behavior
+
+@media (min-width: 768px) {
   .site-header__menu-button {
     display: none;
   }
