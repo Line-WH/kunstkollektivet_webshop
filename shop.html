@@ -3,11 +3,25 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Shop | KunstKollektivet</title>
+    <title>Alle kunstprints | KunstKollektivet</title>
 
-    <meta name="robots" content="All">
+    <meta
+            name="description"
+            content="Udforsk kuraterede kunstprints fra KunstKollektivet. Find plakater og prints skabt af mennesker, udvalgt med omtanke og printet lokalt."
+    >
+
+    <meta name="robots" content="index, follow">
     <meta name="author" content="KunstKollektivet">
     <meta name="copyright" content="KunstKollektivet">
+
+    <link rel="canonical" href="https://kunstkollektivet.dk/shop.html">
+
+    <meta property="og:site_name" content="KunstKollektivet">
+    <meta property="og:title" content="Alle kunstprints | KunstKollektivet">
+    <meta property="og:description" content="Udforsk kuraterede kunstprints skabt af mennesker og udvalgt med omtanke.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kunstkollektivet.dk/shop.html">
+    <meta property="og:image" content="https://kunstkollektivet.dk/images/og-image.jpg">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -24,48 +38,53 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Spring til indhold</a>
+
 <div id="site-header" class="sticky-top"></div>
 
-<main id="main-content">
+<main id="main-content" class="shop-page">
+    <header class="shop-page__header container py-5" aria-labelledby="shop-page-title">
 
-    <section class="shop-hero container py-4 py-md-5">
+        <h1 id="shop-page-title">Alle kunstprints</h1>
 
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <h1 class="shop-hero__eyebrow fw-bold">Alle print</h1>
+        <h2 class="fw-light h5">
+            5 tilgængelige
+        </h2>
+    </header>
 
-                <p class="shop-hero__title">
-                    5 tilgængelige
+    <section class="shop-page__products container pb-5" aria-labelledby="shop-products-title">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+            <div>
+                <h2 id="shop-products-title" class="mb-2">Prints i webshoppen</h2>
+                <p id="shop-products-description" class="shop-page__products-intro mb-0">
+                    Vælg et print for at se størrelser, pris og mere information om værket.
                 </p>
             </div>
         </div>
 
-    </section>
-
-    <section class="shop-products container pb-5" aria-labelledby="shop-products-title">
-
-        <h2 id="shop-products-title" class="visually-hidden">
-            Produkter
-        </h2>
-
         <div
                 id="product-grid"
                 class="row g-4"
+                aria-describedby="shop-products-description"
         >
-            <!-- Product cards are injected here by shop.js -->
+            <!-- Produkter bliver indsat med shop.js -->
         </div>
 
+        <noscript>
+            <p class="mt-4">
+                Produkterne kræver JavaScript for at blive vist i denne prototype.
+            </p>
+        </noscript>
     </section>
-
 </main>
 
 <div id="site-footer"></div>
 
-<script src="js/includes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/products.js"></script>
 <script src="js/shop.js"></script>
+<script src="js/cartStorage.js"></script>
+<script src="js/includes.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -596,6 +596,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 }
 
 //shop side styling
+
+.shop-page-title
 .shop-card {
   display: flex;
   align-items: center;
