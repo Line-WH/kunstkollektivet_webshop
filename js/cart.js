@@ -27,7 +27,7 @@ function renderCart() {
             <div class="text-center py-5">
                 <h2 class="h5">Din kurv er tom</h2>
                 <p>Find et print du elsker, og læg det i kurven.</p>
-                <a href="shop.html" class="btn btn-is rounded-5">
+                <a href="shop.html" class="btn btn-is rounded-5 text-rust">
                     Gå til shoppen
                 </a>
             </div>

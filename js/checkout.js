@@ -29,7 +29,7 @@ function renderCheckoutOrder() {
         orderItemsElement.innerHTML = `
             <div class="checkout-order__empty">
                 <p>Din kurv er tom.</p>
-                <a href="shop.html" class="btn btn-is rounded-5">
+                <a href="shop.html" class="btn btn-is text-rust rounded-5">
                     Gå til shoppen
                 </a>
             </div>

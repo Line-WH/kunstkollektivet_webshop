@@ -5,7 +5,12 @@
 
     <title>Betaling | KunstKollektivet</title>
 
-    <meta name="robots" content="All">
+    <meta
+            name="description"
+            content="Gennemfør din bestilling hos KunstKollektivet."
+    >
+
+    <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="KunstKollektivet">
     <meta name="copyright" content="KunstKollektivet">
 
@@ -24,26 +29,34 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Spring til indhold</a>
+
 <div id="site-header" class="sticky-top"></div>
 
 <main id="main-content" class="checkout-page py-4">
-    <section class="container">
+    <div class="container">
 
-        <h1 class="h5 mb-3">Betaling</h1>
+        <header class="checkout-page__header mb-4">
+            <h1 class="fw-bold">Betaling</h1>
+        </header>
 
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 col-xl-6">
 
                 <section class="checkout-order mb-5" aria-labelledby="checkout-order-title">
                     <h2 id="checkout-order-title" class="checkout-order__title">
-                        Din Ordre
+                        Din ordre
                     </h2>
 
-                    <div id="checkout-order-items">
+                    <div
+                            id="checkout-order-items"
+                            aria-live="polite"
+                            aria-relevant="additions removals text"
+                    >
                         <!-- Injected by checkout.js -->
                     </div>
 
-                    <div class="checkout-order__summary">
+                    <div class="checkout-order__summary" aria-label="Ordreoversigt">
                         <div class="checkout-order__line">
                             <span>Subtotal</span>
                             <span id="checkout-subtotal">0 kr.</span>
@@ -51,22 +64,25 @@
 
                         <div class="checkout-order__line">
                             <span>Fragt</span>
-                            <span id="checkout-shipping">gratis</span>
+                            <span id="checkout-shipping">Gratis</span>
                         </div>
 
                         <div class="checkout-order__line checkout-order__line--total">
                             <span>Total</span>
-                            <span id="checkout-total">0 kr.</span>
+                            <span id="checkout-total" aria-live="polite">0 kr.</span>
                         </div>
                     </div>
                 </section>
 
-                <form id="checkout-form" class="checkout-form">
+                <form id="checkout-form" class="checkout-form" aria-describedby="checkout-form-note">
+                    <p id="checkout-form-note" class="visually-hidden">
+                        Alle felter i formularen skal udfyldes.
+                    </p>
 
-                    <section class="checkout-form__section" aria-labelledby="contact-title">
-                        <h2 id="contact-title" class="checkout-form__title">
+                    <fieldset class="checkout-form__section">
+                        <legend class="checkout-form__title">
                             Kontaktinformation
-                        </h2>
+                        </legend>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -75,15 +91,16 @@
                                     name="email"
                                     type="email"
                                     class="form-control"
+                                    autocomplete="email"
                                     required
                             >
                         </div>
-                    </section>
+                    </fieldset>
 
-                    <section class="checkout-form__section" aria-labelledby="shipping-title">
-                        <h2 id="shipping-title" class="checkout-form__title">
+                    <fieldset class="checkout-form__section">
+                        <legend class="checkout-form__title">
                             Leveringsadresse
-                        </h2>
+                        </legend>
 
                         <div class="mb-3">
                             <label for="shipping-name" class="form-label">Fulde navn</label>
@@ -92,6 +109,7 @@
                                     name="shippingName"
                                     type="text"
                                     class="form-control"
+                                    autocomplete="shipping name"
                                     required
                             >
                         </div>
@@ -103,6 +121,7 @@
                                     name="shippingAddress"
                                     type="text"
                                     class="form-control"
+                                    autocomplete="shipping street-address"
                                     required
                             >
                         </div>
@@ -115,6 +134,8 @@
                                         name="shippingPostal"
                                         type="text"
                                         class="form-control"
+                                        inputmode="numeric"
+                                        autocomplete="shipping postal-code"
                                         required
                                 >
                             </div>
@@ -126,16 +147,17 @@
                                         name="shippingCity"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="shipping address-level2"
                                         required
                                 >
                             </div>
                         </div>
-                    </section>
+                    </fieldset>
 
-                    <section class="checkout-form__section" aria-labelledby="billing-title">
-                        <h2 id="billing-title" class="checkout-form__title">
+                    <fieldset class="checkout-form__section">
+                        <legend class="checkout-form__title">
                             Faktureringsadresse
-                        </h2>
+                        </legend>
 
                         <div class="mb-3">
                             <label for="billing-address" class="form-label">Adresse</label>
@@ -144,6 +166,7 @@
                                     name="billingAddress"
                                     type="text"
                                     class="form-control"
+                                    autocomplete="billing street-address"
                                     required
                             >
                         </div>
@@ -156,6 +179,8 @@
                                         name="billingPostal"
                                         type="text"
                                         class="form-control"
+                                        inputmode="numeric"
+                                        autocomplete="billing postal-code"
                                         required
                                 >
                             </div>
@@ -167,16 +192,21 @@
                                         name="billingCity"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="billing address-level2"
                                         required
                                 >
                             </div>
                         </div>
-                    </section>
+                    </fieldset>
 
-                    <section class="checkout-form__section" aria-labelledby="payment-title">
-                        <h2 id="payment-title" class="checkout-form__title">
+                    <fieldset class="checkout-form__section" aria-describedby="payment-note">
+                        <legend class="checkout-form__title">
                             Kortoplysninger
-                        </h2>
+                        </legend>
+
+                        <p id="payment-note" class="small text-center">
+                            Dette er en prototype. Der bliver ikke gennemført en rigtig betaling.
+                        </p>
 
                         <div class="mb-3">
                             <label for="card-number" class="form-label">Kortnummer</label>
@@ -218,22 +248,26 @@
                                 >
                             </div>
                         </div>
-                    </section>
+                    </fieldset>
 
                     <button type="submit" class="btn btn-primary checkout-form__button">
                         Gennemfør betaling
                     </button>
 
-                    <p id="checkout-feedback" class="small text-center mt-3 d-none" aria-live="polite">
+                    <p
+                            id="checkout-feedback"
+                            class="small text-center mt-3 d-none"
+                            role="status"
+                            aria-live="polite"
+                    >
                         <!-- Injected by checkout.js -->
                     </p>
-
                 </form>
 
             </div>
         </div>
 
-    </section>
+    </div>
 </main>
 
 <div id="site-footer"></div>
@@ -241,7 +275,6 @@
 <script src="js/cartStorage.js"></script>
 <script src="js/includes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/checkout.js"></script>
 
 </body>
