@@ -3,9 +3,14 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Søg | KunstKollektivet</title>
+    <title>Søg efter kunstprints | KunstKollektivet</title>
 
-    <meta name="robots" content="All">
+    <meta
+            name="description"
+            content="Søg efter kunstprints, kunstnere, stilarter, materialer og nøgleord hos KunstKollektivet."
+    >
+
+    <meta name="robots" content="noindex, follow">
     <meta name="author" content="KunstKollektivet">
     <meta name="copyright" content="KunstKollektivet">
 
@@ -13,6 +18,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
             href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
             rel="stylesheet"
@@ -23,16 +29,28 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Spring til indhold</a>
+
 <div id="site-header" class="sticky-top"></div>
 
-<main class="search-page py-5">
+<main id="main-content" class="search-page py-5">
     <div class="container">
-        <div class="row justify-content-center mb-4">
-            <div class="col-12 col-lg-7 text-center">
-                <h1 class="fw-bold">Søg i prints</h1>
-                <p>Søg efter titel, kunstner, stil, materiale eller nøgleord.</p>
 
-                <form id="search-form" class="mt-4" role="search">
+        <header class="search-page__header row justify-content-center mb-4">
+            <div class="col-12 col-lg-7 text-center">
+
+                <h1 class="fw-bold">Søg i prints</h1>
+
+                <p class="search-page__intro">
+                    Søg efter titel, kunstner, stil, materiale eller nøgleord.
+                </p>
+
+                <form
+                        id="search-form"
+                        class="mt-4"
+                        role="search"
+                        aria-label="Søg efter kunstprints"
+                >
                     <label for="search-input" class="visually-hidden">
                         Søg efter prints
                     </label>
@@ -53,11 +71,30 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </header>
 
-        <p id="search-summary" class="text-center fw-bold mb-4"></p>
+        <section class="search-page__results" aria-labelledby="search-results-title">
+            <h2 id="search-results-title" class="visually-hidden">
+                Søgeresultater
+            </h2>
 
-        <div id="search-results" class="row g-4"></div>
+            <p
+                    id="search-summary"
+                    class="text-center fw-bold mb-4"
+                    role="status"
+                    aria-live="polite"
+            ></p>
+
+            <div
+                    id="search-results"
+                    class="row g-4"
+                    aria-live="polite"
+                    aria-relevant="additions removals text"
+            >
+                <!-- Søgeresultater bliver indsat med search.js -->
+            </div>
+        </section>
+
     </div>
 </main>
 

@@ -646,6 +646,19 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //Product side styling
 
+.product-form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.product-form .form-select:focus-visible,
+.product-form__button:focus-visible,
+.product-foldout summary:focus-visible {
+  outline: 3px solid $is;
+  outline-offset: 4px;
+}
+
 // Product layout
 
 .product-page {
@@ -984,7 +997,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   padding: 0.25rem 0;
 }
 
-// Logo
+//Logo
 
 .site-header__logo {
   display: inline-flex;
@@ -1031,7 +1044,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   text-underline-offset: 0.35em;
 }
 
-// Icon links
+//Icon links
 
 .site-header__icon-link {
   display: inline-flex;
@@ -1051,7 +1064,30 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   display: block;
 }
 
-// Cart counter
+//søg
+
+// Search page
+
+.search-page__header {
+  max-width: 100%;
+}
+
+.search-page__intro {
+  color: rgba($rust, 0.8);
+  line-height: 1.55;
+}
+
+.search-page__results {
+  min-height: 40vh;
+}
+
+.search-page .form-control:focus-visible,
+.search-page .btn:focus-visible {
+  outline: 3px solid $is;
+  outline-offset: 3px;
+}
+
+//Cart counter
 
 .site-header__cart-link {
   position: relative;
@@ -1139,7 +1175,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   text-underline-offset: 0.35em;
 }
 
-// Focus states
+//Focus states
 
 .site-header__logo:focus-visible,
 .site-header__nav-link:focus-visible,

@@ -15,27 +15,71 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePrice();
 
     setupAddToCart(product);
+
     if (window.CartStorage) {
         window.CartStorage.updateCartCount();
     }
 });
 
 function renderProduct(product) {
-    document.title = `${product.title} | KunstKollektivet`;
+    updateProductMeta(product);
 
-    document.querySelector("#product-category").textContent = product.category;
-    document.querySelector("#product-title").textContent = product.title;
-    document.querySelector("#product-artist").textContent = product.artist;
-    document.querySelector("#product-description").textContent = product.description;
-    document.querySelector("#product-artist-description").textContent = product.artistDescription;
+    setText("#product-category", product.category);
+    setText("#product-title", product.title);
+    setText("#product-artist", `Af ${product.artist}`);
+    setText("#product-description", product.description);
+    setText("#product-artist-description", product.artistDescription);
+    setText("#product-materials", product.materials);
 
-    const materialsElement = document.querySelector("#product-materials");
+    const addToCartButton = document.querySelector("#add-to-cart-button");
 
-    if (materialsElement) {
-        materialsElement.textContent = product.materials;
+    if (addToCartButton) {
+        addToCartButton.setAttribute(
+            "aria-label",
+            `Læg ${product.title} af ${product.artist} i kurven`
+        );
     }
 
     renderGallery(product);
+}
+
+function updateProductMeta(product) {
+    const title = `${product.title} af ${product.artist} | KunstKollektivet`;
+    const description = createProductDescription(product);
+    const url = `${window.location.origin}${window.location.pathname}?slug=${encodeURIComponent(product.slug)}`;
+    const imageUrl = product.images?.[0]?.src
+        ? new URL(product.images[0].src, window.location.href).href
+        : `${window.location.origin}/images/og-image.jpg`;
+
+    document.title = title;
+
+    setMetaContent("#meta-description", description);
+    setMetaContent("#og-title", title);
+    setMetaContent("#og-description", description);
+    setMetaContent("#og-url", url);
+    setMetaContent("#og-image", imageUrl);
+
+    const canonicalLink = document.querySelector("#canonical-link");
+
+    if (canonicalLink) {
+        canonicalLink.setAttribute("href", url);
+    }
+}
+
+function createProductDescription(product) {
+    const fallback = `Se ${product.title} af ${product.artist} hos KunstKollektivet. Vælg størrelse, papirtype og ramme.`;
+
+    if (!product.description) {
+        return fallback;
+    }
+
+    const shortDescription = product.description.trim();
+
+    if (shortDescription.length <= 150) {
+        return `${shortDescription} Se printet hos KunstKollektivet.`;
+    }
+
+    return `${shortDescription.slice(0, 147).trim()}...`;
 }
 
 function renderGallery(product) {
@@ -46,30 +90,7 @@ function renderGallery(product) {
         return;
     }
 
-    const mediaItems = [];
-
-    const videos = Array.isArray(product.videos)
-        ? product.videos
-        : product.video
-            ? [product.video]
-            : [];
-
-    videos.forEach((video) => {
-        mediaItems.push({
-            type: "video",
-            src: video.src,
-            mimeType: video.type || "video/mp4",
-            alt: video.label || `${product.title} video`
-        });
-    });
-
-    (product.images || []).forEach((image) => {
-        mediaItems.push({
-            type: "image",
-            src: image.src,
-            alt: image.alt
-        });
-    });
+    const mediaItems = getProductMediaItems(product);
 
     carouselInner.innerHTML = "";
     carouselIndicators.innerHTML = "";
@@ -87,47 +108,92 @@ function renderGallery(product) {
     }
 
     mediaItems.forEach((mediaItem, index) => {
-        const isActive = index === 0 ? "active" : "";
-        const ariaCurrent = index === 0 ? `aria-current="true"` : "";
+        const isActive = index === 0;
+        const activeClass = isActive ? "active" : "";
+        const ariaCurrent = isActive ? `aria-current="true"` : "";
 
-        carouselIndicators.innerHTML += `
-            <button
-                type="button"
-                data-bs-target="#productMediaCarousel"
-                data-bs-slide-to="${index}"
-                class="${isActive}"
-                ${ariaCurrent}
-                aria-label="Vis medie ${index + 1}"
-            ></button>
-        `;
+        carouselIndicators.insertAdjacentHTML(
+            "beforeend",
+            `
+                <button
+                    type="button"
+                    data-bs-target="#productMediaCarousel"
+                    data-bs-slide-to="${index}"
+                    class="${activeClass}"
+                    ${ariaCurrent}
+                    aria-label="Vis ${mediaItem.label}"
+                ></button>
+            `
+        );
 
         if (mediaItem.type === "video") {
-            carouselInner.innerHTML += `
-        <div class="carousel-item ${isActive}">
-            <video
-                class="product-carousel__media"
-                controls
-                muted
-                playsinline
-                preload="metadata"
-            >
-                <source src="${mediaItem.src}" type="${mediaItem.mimeType}">
-                Din browser understøtter ikke video.
-            </video>
-        </div>
-    `;
-        } else {
-            carouselInner.innerHTML += `
-                <div class="carousel-item ${isActive}">
+            carouselInner.insertAdjacentHTML(
+                "beforeend",
+                `
+                    <div class="carousel-item ${activeClass}">
+                        <video
+                            class="product-carousel__media"
+                            controls
+                            muted
+                            playsinline
+                            preload="metadata"
+                            aria-label="${mediaItem.alt}"
+                        >
+                            <source src="${mediaItem.src}" type="${mediaItem.mimeType}">
+                            Din browser understøtter ikke video.
+                        </video>
+                    </div>
+                `
+            );
+
+            return;
+        }
+
+        carouselInner.insertAdjacentHTML(
+            "beforeend",
+            `
+                <div class="carousel-item ${activeClass}">
                     <img
                         src="${mediaItem.src}"
                         class="product-carousel__media"
                         alt="${mediaItem.alt}"
+                        loading="${index === 0 ? "eager" : "lazy"}"
                     >
                 </div>
-            `;
-        }
+            `
+        );
     });
+}
+
+function getProductMediaItems(product) {
+    const mediaItems = [];
+
+    const videos = Array.isArray(product.videos)
+        ? product.videos
+        : product.video
+            ? [product.video]
+            : [];
+
+    videos.forEach((video, index) => {
+        mediaItems.push({
+            type: "video",
+            src: video.src,
+            mimeType: video.type || "video/mp4",
+            alt: video.label || `Video af ${product.title}`,
+            label: video.label || `video ${index + 1} af ${product.title}`
+        });
+    });
+
+    (product.images || []).forEach((image, index) => {
+        mediaItems.push({
+            type: "image",
+            src: image.src,
+            alt: image.alt || `${product.title} af ${product.artist}`,
+            label: `billede ${index + 1} af ${product.title}`
+        });
+    });
+
+    return mediaItems;
 }
 
 function setupCarouselVideoPause() {
@@ -170,22 +236,34 @@ function updatePrice() {
     const selectedSize = sizeSelect.options[sizeSelect.selectedIndex];
     const selectedFrame = frameSelect.options[frameSelect.selectedIndex];
 
-    const sizePrice = Number(selectedSize.dataset.price);
-    const framePrice = Number(selectedFrame.dataset.priceModifier);
+    const sizePrice = Number(selectedSize.dataset.price) || 0;
+    const framePrice = Number(selectedFrame.dataset.priceModifier) || 0;
 
     const totalPrice = sizePrice + framePrice;
 
-    priceElement.textContent = `${totalPrice} kr`;
+    priceElement.textContent = `${totalPrice} kr.`;
 }
 
 function showProductNotFound() {
+    document.title = "Produktet blev ikke fundet | KunstKollektivet";
+
+    setMetaContent(
+        "#meta-description",
+        "Produktet blev ikke fundet hos KunstKollektivet."
+    );
+
     const mainContent = document.querySelector("#main-content");
 
+    if (!mainContent) {
+        return;
+    }
+
     mainContent.innerHTML = `
-        <section class="container py-5">
-            <h1>Produktet blev ikke fundet</h1>
+        <section class="container py-5" aria-labelledby="product-not-found-title">
+            <p class="section-eyebrow">Produkt</p>
+            <h1 id="product-not-found-title">Produktet blev ikke fundet</h1>
             <p>Det ser ud til, at produktet ikke findes eller er blevet fjernet.</p>
-            <a href="shop.html" class="btn btn-primary">Tilbage til shoppen</a>
+            <a href="shop.html" class="btn btn-is text-rust">Tilbage til shoppen</a>
         </section>
     `;
 }
@@ -209,6 +287,10 @@ function setupAddToCart(product) {
         window.CartStorage.addItem(cartItem);
 
         showCartFeedback(feedbackElement, `${product.title} er lagt i kurven.`);
+
+        if (window.CartStorage.updateCartCount) {
+            window.CartStorage.updateCartCount();
+        }
     });
 }
 
@@ -233,12 +315,21 @@ function createCartItem(product) {
         price: totalPrice,
         quantity: 1,
         image: product.images?.[0]?.src || "",
-        imageAlt: product.images?.[0]?.alt || product.title
+        imageAlt: product.images?.[0]?.alt || `${product.title} af ${product.artist}`
     };
 }
 
 function getSelectedOption(selector) {
     const select = document.querySelector(selector);
+
+    if (!select) {
+        return {
+            value: "",
+            label: "",
+            option: {}
+        };
+    }
+
     const option = select.selectedOptions[0];
 
     return {
@@ -255,4 +346,24 @@ function showCartFeedback(feedbackElement, message) {
 
     feedbackElement.textContent = message;
     feedbackElement.classList.remove("d-none");
+}
+
+function setText(selector, value) {
+    const element = document.querySelector(selector);
+
+    if (!element) {
+        return;
+    }
+
+    element.textContent = value || "";
+}
+
+function setMetaContent(selector, value) {
+    const element = document.querySelector(selector);
+
+    if (!element || !value) {
+        return;
+    }
+
+    element.setAttribute("content", value);
 }

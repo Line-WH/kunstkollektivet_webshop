@@ -5,9 +5,28 @@
 
     <title>Produkt | KunstKollektivet</title>
 
-    <meta name="robots" content="All">
+    <meta
+            id="meta-description"
+            name="description"
+            content="Se kunstprint hos KunstKollektivet. Vælg størrelse, papirtype og ramme."
+    >
+
+    <meta name="robots" content="index, follow">
     <meta name="author" content="KunstKollektivet">
     <meta name="copyright" content="KunstKollektivet">
+
+    <link id="canonical-link" rel="canonical" href="https://kunstkollektivet.dk/product.html">
+
+    <meta property="og:site_name" content="KunstKollektivet">
+    <meta id="og-title" property="og:title" content="Produkt | KunstKollektivet">
+    <meta
+            id="og-description"
+            property="og:description"
+            content="Se kunstprint hos KunstKollektivet."
+    >
+    <meta property="og:type" content="product">
+    <meta id="og-url" property="og:url" content="https://kunstkollektivet.dk/product.html">
+    <meta id="og-image" property="og:image" content="https://kunstkollektivet.dk/images/og-image.jpg">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -24,24 +43,29 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Spring til indhold</a>
+
 <div id="site-header" class="sticky-top"></div>
 
 <main id="main-content" class="product-page">
 
-    <section class="product-layout container py-3 py-lg-5">
+    <section class="product-layout container py-3 py-lg-5" aria-labelledby="product-title">
 
         <div class="row g-4 g-lg-5 align-items-start">
 
-            <!-- Product carousel -->
             <div class="col-12 col-lg-7">
 
-                <section class="product-gallery" aria-label="Produktbilleder og video">
+                <section class="product-gallery" aria-labelledby="product-gallery-title">
+                    <h2 id="product-gallery-title" class="visually-hidden">
+                        Produktbilleder og video
+                    </h2>
 
                     <div
                             id="productMediaCarousel"
                             class="carousel slide product-carousel"
                             data-bs-touch="true"
                             data-bs-interval="false"
+                            aria-roledescription="billedkarusel"
                     >
 
                         <div
@@ -54,6 +78,7 @@
                         <div
                                 id="product-carousel-inner"
                                 class="carousel-inner"
+                                aria-live="polite"
                         >
                             <!-- Injected by product.js -->
                         </div>
@@ -63,7 +88,7 @@
                                 type="button"
                                 data-bs-target="#productMediaCarousel"
                                 data-bs-slide="prev"
-                                aria-label="Forrige billede"
+                                aria-label="Vis forrige produktbillede"
                         >
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
@@ -73,21 +98,19 @@
                                 type="button"
                                 data-bs-target="#productMediaCarousel"
                                 data-bs-slide="next"
-                                aria-label="Næste billede"
+                                aria-label="Vis næste produktbillede"
                         >
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
 
                     </div>
-
                 </section>
 
             </div>
 
-            <!-- Buy area -->
             <div class="col-12 col-lg-5">
 
-                <aside class="product-purchase" aria-labelledby="product-title">
+                <section class="product-purchase" aria-labelledby="product-title">
 
                     <p
                             id="product-category"
@@ -110,76 +133,96 @@
                         <!-- Injected artist -->
                     </p>
 
+                    <p class="visually-hidden" id="product-price-label">
+                        Aktuel pris
+                    </p>
+
                     <p
                             id="product-price"
                             class="product-purchase__price"
+                            aria-labelledby="product-price-label product-price"
+                            aria-live="polite"
                     >
                         <!-- Price calculated by product.js -->
                     </p>
 
-                    <form class="product-form">
+                    <form class="product-form" aria-describedby="product-form-note">
+                        <p id="product-form-note" class="visually-hidden">
+                            Vælg størrelse, papirtype og ramme, før du lægger printet i kurven.
+                        </p>
 
-                        <div class="mb-3">
-                            <label for="product-size" class="form-label">
-                                Størrelse
-                            </label>
+                        <fieldset class="product-form__fieldset">
+                            <legend class="visually-hidden">
+                                Vælg format og tilvalg
+                            </legend>
 
-                            <select id="product-size" class="form-select">
-                                <option value="A4" data-price="249">A4 — 249 kr.</option>
-                                <option value="A3" data-price="399">A3 — 399 kr.</option>
-                                <option value="A2" data-price="599">A2 — 599 kr.</option>
-                            </select>
-                        </div>
+                            <div class="mb-3">
+                                <label for="product-size" class="form-label">
+                                    Størrelse
+                                </label>
 
-                        <div class="mb-3">
-                            <label for="product-paper" class="form-label">
-                                Papirtype
-                            </label>
+                                <select
+                                        id="product-size"
+                                        name="size"
+                                        class="form-select"
+                                >
+                                    <option value="A4" data-price="249">A4 — 249 kr.</option>
+                                    <option value="A3" data-price="399">A3 — 399 kr.</option>
+                                    <option value="A2" data-price="599">A2 — 599 kr.</option>
+                                </select>
+                            </div>
 
-                            <select
-                                    id="product-paper"
-                                    class="form-select"
-                                    name="paper"
-                            >
-                                <option value="mat-fine-art" selected>
-                                    Mat fine art papir
-                                </option>
+                            <div class="mb-3">
+                                <label for="product-paper" class="form-label">
+                                    Papirtype
+                                </label>
 
-                                <option value="strukturpapir">
-                                    Let strukturpapir
-                                </option>
-                            </select>
-                        </div>
+                                <select
+                                        id="product-paper"
+                                        class="form-select"
+                                        name="paper"
+                                >
+                                    <option value="mat-fine-art" selected>
+                                        Mat fine art papir
+                                    </option>
 
-                        <div class="mb-4">
-                            <label for="product-frame" class="form-label">
-                                Ramme
-                            </label>
+                                    <option value="strukturpapir">
+                                        Let strukturpapir
+                                    </option>
+                                </select>
+                            </div>
 
-                            <select
-                                    id="product-frame"
-                                    class="form-select"
-                                    name="frame"
-                            >
-                                <option value="uden-ramme" data-price-modifier="0" selected>
-                                    Uden ramme
-                                </option>
+                            <div class="mb-4">
+                                <label for="product-frame" class="form-label">
+                                    Ramme
+                                </label>
 
-                                <option value="sort-ramme" data-price-modifier="250">
-                                    Sort ramme + 250 kr
-                                </option>
+                                <select
+                                        id="product-frame"
+                                        class="form-select"
+                                        name="frame"
+                                >
+                                    <option value="uden-ramme" data-price-modifier="0" selected>
+                                        Uden ramme
+                                    </option>
 
-                                <option value="eg-ramme" data-price-modifier="300">
-                                    Eg ramme + 300 kr
-                                </option>
-                            </select>
-                        </div>
+                                    <option value="sort-ramme" data-price-modifier="250">
+                                        Sort ramme + 250 kr.
+                                    </option>
+
+                                    <option value="eg-ramme" data-price-modifier="300">
+                                        Eg ramme + 300 kr.
+                                    </option>
+                                </select>
+                            </div>
+                        </fieldset>
 
                         <div>
                             <button
                                     type="button"
                                     id="add-to-cart-button"
                                     class="btn btn-is text-rust product-form__button fw-bold"
+                                    aria-describedby="cart-feedback"
                             >
                                 Læg i kurven
                             </button>
@@ -187,43 +230,48 @@
                             <p
                                     id="cart-feedback"
                                     class="small mt-2 mb-0 d-none"
+                                    role="status"
                                     aria-live="polite"
                             >
                                 <!-- Feedback injected by product.js -->
                             </p>
                         </div>
-
                     </form>
 
-                    <ul class="product-purchase__notes">
-                        <li>Printet lokalt i Danmark</li>
-                        <li>Produceret på kvalitetspapir</li>
-                        <li>Kunstneren beholder rettighederne</li>
-                    </ul>
+                    <section class="product-purchase__notes-section" aria-labelledby="product-notes-title">
+                        <h2 id="product-notes-title" class="visually-hidden">
+                            Produktfordele
+                        </h2>
 
-                </aside>
+                        <ul class="product-purchase__notes">
+                            <li>Printet lokalt i Danmark</li>
+                            <li>Produceret på kvalitetspapir</li>
+                            <li>Kunstneren beholder rettighederne</li>
+                        </ul>
+                    </section>
+
+                </section>
 
             </div>
 
         </div>
 
-        <!-- Product text -->
         <div class="row mt-4 mt-lg-5">
 
             <div class="col-12 col-lg-7">
 
                 <div class="product-copy">
 
-                    <section class="product-copy__section">
-                        <h2>Beskrivelse af værket</h2>
+                    <section class="product-copy__section" aria-labelledby="product-description-title">
+                        <h2 id="product-description-title">Beskrivelse af værket</h2>
 
                         <p id="product-description">
                             <!-- Injected product description -->
                         </p>
                     </section>
 
-                    <section class="product-copy__section">
-                        <h2>Om kunstneren</h2>
+                    <section class="product-copy__section" aria-labelledby="product-artist-title">
+                        <h2 id="product-artist-title">Om kunstneren</h2>
 
                         <p id="product-artist-description">
                             <!-- Injected artist description -->
