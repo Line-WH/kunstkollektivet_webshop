@@ -3,9 +3,14 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Bekræftelse | KunstKollektivet</title>
+    <title>Ordrebekræftelse | KunstKollektivet</title>
 
-    <meta name="robots" content="All">
+    <meta
+            name="description"
+            content="Bekræftelse på din ordre hos KunstKollektivet."
+    >
+
+    <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="KunstKollektivet">
     <meta name="copyright" content="KunstKollektivet">
 
@@ -24,38 +29,51 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Spring til indhold</a>
+
 <div id="site-header" class="sticky-top"></div>
 
 <main id="main-content" class="confirmation-page py-5">
-    <section class="container">
+    <div class="container">
 
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-5">
 
-                <section class="confirmation-card text-center">
+                <section
+                        class="confirmation-card text-center"
+                        aria-labelledby="confirmation-title"
+                        aria-describedby="confirmation-intro"
+                >
 
                     <div class="confirmation-card__icon" aria-hidden="true">
                         ✓
                     </div>
 
-                    <h1 class="confirmation-card__title">
+                    <h1 id="confirmation-title" class="confirmation-card__title">
                         Tak for din ordre!
                     </h1>
 
-                    <p class="confirmation-card__intro">
+                    <p id="confirmation-intro" class="confirmation-card__intro">
                         Vi har modtaget din ordre og sender en bekræftelse til din mail.
                     </p>
 
-                    <section class="checkout-order text-start my-4" aria-labelledby="confirmation-order-title">
+                    <section
+                            class="checkout-order text-start my-4"
+                            aria-labelledby="confirmation-order-title"
+                    >
                         <h2 id="confirmation-order-title" class="checkout-order__title">
-                            Din Ordre
+                            Din ordre
                         </h2>
 
-                        <div id="confirmation-order-items">
+                        <div
+                                id="confirmation-order-items"
+                                aria-live="polite"
+                                aria-relevant="additions removals text"
+                        >
                             <!-- Injected by confirmation.js -->
                         </div>
 
-                        <div class="checkout-order__summary">
+                        <div class="checkout-order__summary" aria-label="Ordreoversigt">
                             <div class="checkout-order__line">
                                 <span>Subtotal</span>
                                 <span id="confirmation-subtotal">0 kr.</span>
@@ -63,18 +81,25 @@
 
                             <div class="checkout-order__line">
                                 <span>Fragt</span>
-                                <span id="confirmation-shipping">gratis</span>
+                                <span id="confirmation-shipping">Gratis</span>
                             </div>
 
                             <div class="checkout-order__line checkout-order__line--total">
                                 <span>Total</span>
-                                <span id="confirmation-total">0 kr.</span>
+                                <span id="confirmation-total" aria-live="polite">0 kr.</span>
                             </div>
                         </div>
+
+                        <noscript>
+                            <p>
+                                Ordreoversigten kræver JavaScript for at blive vist i denne prototype.
+                            </p>
+                        </noscript>
                     </section>
 
                     <p class="confirmation-card__delivery">
-                        Din ordre sendes inden for 2–3 hverdage. Du vil modtage en sporingsmail, når din ordre er afsendt.
+                        Din ordre sendes inden for 2–3 hverdage. Du vil modtage en sporingsmail,
+                        når din ordre er afsendt.
                     </p>
 
                     <a href="shop.html" class="btn btn-is text-rust confirmation-card__button">
@@ -86,7 +111,7 @@
             </div>
         </div>
 
-    </section>
+    </div>
 </main>
 
 <div id="site-footer"></div>
@@ -94,7 +119,6 @@
 <script src="js/cartStorage.js"></script>
 <script src="js/includes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/confirmation.js"></script>
 
 </body>
