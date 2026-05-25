@@ -24,6 +24,12 @@
     <!--canonical hjælper søgemaskiner. fortæller at forsiden er den primære version af siden. -->
     <link rel="canonical" href="https://kunstkollektivet.dk/">
 
+    <link
+            rel="preload"
+            as="image"
+            href="images/hero-poster.webp"
+            fetchpriority="high"
+    >
     <link rel="icon" href="logo/bomaerke_brun.png" type="image/png">
     <link rel="apple-touch-icon" href="logo/bomaerke_brun.png">
 	
@@ -51,7 +57,31 @@
                  aria-describedby="hero-description">
 
             <div class="video-hero__media" aria-hidden="true">
-                <video autoplay muted loop playsinline preload="none" poster="images/hero-poster.webp">
+                <picture>
+                    <source
+                            srcset="images/hero-poster.webp"
+                            media="(max-width: 767px)"
+                    >
+
+                    <img
+                            src="images/hero-poster.webp"
+                            width="1600"
+                            height="900"
+                            alt=""
+                            class="video-hero__poster"
+                            fetchpriority="high"
+                    >
+                </picture>
+
+                <video
+                        class="video-hero__video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="none"
+                        poster="images/hero-poster.webp"
+                >
                     <source src="video/hero.mp4" type="video/mp4">
                 </video>
             </div>
@@ -69,7 +99,7 @@
                         ></span>
                     </h1>
 
-                    <p id="hero-description " class="visually-hidden">
+                    <p id="hero-description" class="visually-hidden">
                      KunstKollektivet sælger prints skabt af mennesker, kurateret med omhu og printet lokalt.
                     </p>
 
@@ -86,7 +116,7 @@
                 <div class="row mb-4">
                     <div class="col-12 col-lg-8">
                         <p class="section-eyebrow">Nye værker</p>
-                        <h2 class="fw-bold">Se vores nyeste prints</h2>
+                        <h2 id="nye-prints-titel" class="fw-bold">Se vores nyeste prints</h2>
                         <p class="news-section__intro">
                             Friske farver og naturmotiver til at gøre dit hjem forårsklart
                         </p>
@@ -207,7 +237,7 @@
                         <a href="blog.html#blogpost-1" class="inspo-card">
                             <div class="inspo-card__image-wrap">
                                 <img
-                                        src="images/IMG_9058.JPEG"
+                                        src="images/IMG_9058.jpg"
                                         width="600"
                                         height="800"
                                         alt="Alkoholbaseret tuscher på papir"
