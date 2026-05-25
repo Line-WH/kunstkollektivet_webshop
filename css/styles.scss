@@ -468,9 +468,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   padding: 5rem 0;
 }
 
+@media (max-width: 575.98px) {
+  .value-section .row{
+    --bs-gutter-x: #{$grid-gutter-width};
+  }
+}
+
 .value-section__image-wrap {
   position: relative;
-  max-width: 28rem;
   margin-inline: auto;
 }
 
