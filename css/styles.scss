@@ -66,6 +66,20 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
 // Tilgængelighed
 
 .skip-link {
@@ -503,13 +517,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   margin-inline: auto;
 }
 
-.value-section__image-wrap::before {
-  content: "";
-  position: absolute;
-  border-radius: 1.25rem;
-  z-index: -1;
-}
-
 .value-section__image {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -566,10 +573,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
   .value-section__image-wrap {
     max-width: none;
-  }
-
-  .value-section__image-wrap::before {
-    inset: 0.75rem -0.5rem -0.75rem 0.5rem;
   }
 
   .value-item {
