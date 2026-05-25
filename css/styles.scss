@@ -9,6 +9,7 @@ $is: #C0D4EB;
 
 $font-brand: "Balsamiq Sans", sans-serif;
 $font-body: "Merriweather Sans", sans-serif;
+$font-body-light: "Merriweather Sans Light", sans-serif;
 
 $primary: $rust;
 $secondary: $canvas;
@@ -66,19 +67,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
-img,
-picture,
-video,
-canvas,
-svg {
-  max-width: 100%;
-}
 
 // Tilgængelighed
 
@@ -266,16 +255,6 @@ svg {
   padding: 4rem 0;
 }
 
-.section-eyebrow {
-  margin-bottom: 0.5rem;
-  font-family: $font-brand;
-  font-weight: 700;
-  color: rgba($rust, 0.75);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-}
-
 .news-section__intro {
   max-width: 34rem;
   margin: 0;
@@ -416,18 +395,13 @@ svg {
 
 .inspo-section {
   padding: 4rem 0;
-}
-
-.inspo-section__intro {
-  max-width: 36rem;
-  margin: 0;
-  color: rgba($rust, 0.8);
+  background-color: $rust;
 }
 
 .inspo-card {
   display: block;
   height: 100%;
-  color: $rust;
+  color: $canvas;
   text-decoration: none;
   padding-top: 0.75rem;
   transition:
@@ -437,7 +411,7 @@ svg {
 
 .inspo-card:hover,
 .inspo-card:focus-visible {
-  color: $rust;
+  color: $canvas;
   transform: translateY(-0.2rem);
 }
 
@@ -445,12 +419,11 @@ svg {
   overflow: hidden;
   border-radius: 1rem;
   margin-bottom: 1rem;
-  background-color: rgba($rust, 0.08);
 }
 
 .inspo-card__image {
   width: 100%;
-  max-height: 200px;
+  max-height: 40vh;
   display: block;
   object-fit: cover;
   transition: transform 220ms ease;
@@ -462,37 +435,21 @@ svg {
 }
 
 .inspo-card__label {
-  margin: 0 0 0.35rem;
-  font-family: $font-brand;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba($rust, 0.65);
+  font-family: $font-body-light;
+  color: $is;
 }
 
 .inspo-card__title {
-  margin: 0 0 0.5rem;
-  font-family: $font-body;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: $rust;
-}
-
-.inspo-card__text {
-  margin: 0 0 1rem;
-  color: rgba($rust, 0.8);
-  line-height: 1.45;
-  font-size: 0.95rem;
+  font-family: $font-body-light;
+  color: $canvas;
 }
 
 .inspo-card__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-family: $font-brand;
-  font-weight: 700;
-  color: $rust;
+  font-family: $font-body;
+  color: $canvas;
 }
 
 .inspo-card__cta::after {
@@ -1015,10 +972,15 @@ svg {
 
 //header
 
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
 .site-header {
   background-color: rgba($canvas, 0.92);
   color: $rust;
-  z-index: 1000;
   padding: 0.35rem 0;
 
   backdrop-filter: blur(8px);
@@ -1106,8 +1068,6 @@ svg {
 }
 
 //søg
-
-// Search page
 
 .search-page__header {
   max-width: 100%;

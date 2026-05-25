@@ -24,15 +24,16 @@
     <!--canonical hjælper søgemaskiner. fortæller at forsiden er den primære version af siden. -->
     <link rel="canonical" href="https://kunstkollektivet.dk/">
 
+
+    <link rel="icon" href="logo/bomaerke_brun.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo/bomaerke_brun.png">
+
     <link
             rel="preload"
             as="image"
             href="images/hero-poster.webp"
-            fetchpriority="high"
     >
-    <link rel="icon" href="logo/bomaerke_brun.png" type="image/png">
-    <link rel="apple-touch-icon" href="logo/bomaerke_brun.png">
-	
+
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +51,8 @@
 
 <a href="#main-content" class="visually-hidden-focusable skip-link">Spring til indhold</a>
 
+<div id="site-header"></div>
 
-<div id="site-header" class="sticky-top"></div>
     <main id="main-content">
 
         <section class="video-hero"
@@ -68,8 +69,6 @@
 
                     <img
                             src="images/hero-poster.webp"
-                            width="1600"
-                            height="900"
                             alt=""
                             class="video-hero__poster"
                             fetchpriority="high"
@@ -118,23 +117,20 @@
             <div class="container">
                 <div class="row mb-4">
                     <div class="col-12 col-lg-8">
-                        <p class="section-eyebrow">Nye værker</p>
-                        <h2 id="nye-prints-titel" class="fw-bold">Se vores nyeste prints</h2>
-                        <p class="news-section__intro">
+                        <h2 id="nye-prints-titel" class="fw-bold mb-2">Nyheder</h2>
+                        <p class="news-section__intro mb-2">
                             Friske farver og naturmotiver til at gøre dit hjem forårsklart
                         </p>
                     </div>
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4">
                         <article class="highlight-print-card">
                             <a href="product.html?slug=pige-med-matcha" class="highlight-print-card__link"  aria-label="Se printet Pige med matcha af Nana Rooed">
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/pige-matcha.jpg"
-                                            width="800"
-                                            height="1000"
                                             alt="Illustration af en pige med matcha i varme og rolige farver"
                                             class="highlight-print-card__image"
                                             loading="lazy"
@@ -158,14 +154,12 @@
                         </article>
                     </div>
 
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4">
                         <article class="highlight-print-card">
                             <a href="product.html?slug=abstrakte-bjerge-2" class="highlight-print-card__link" aria-label="Se printet abstrakte bjerge 2 af Nik">
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/abstrakte-bjerge.jpg"
-                                            width="800"
-                                            height="1000"
                                             alt="grafisk illustration af bjerge i en solnedgang"
                                             class="highlight-print-card__image"
                                             loading="lazy"
@@ -189,14 +183,12 @@
                         </article>
                     </div>
 
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4">
                         <article class="highlight-print-card">
                             <a href="product.html?slug=nordisk-kald" class="highlight-print-card__link" aria-label="Se printet nordisk kald af Heidi Larsen">
                                 <div class="highlight-print-card__image-wrap">
                                     <img
                                             src="images/nordisk-kald.jpg"
-                                            width="800"
-                                            height="1000"
                                             alt="linoleumstryk af kvinde med naturen omkring sig i skarpe linjer og sprirituelt udtryk"
                                             class="highlight-print-card__image"
                                             loading="lazy"
@@ -225,13 +217,9 @@
 
         <section class="inspo-section" aria-labelledby="inspiration-titel">
             <div class="container">
-                <div class="row mb-4">
+                <div class="row mb-2">
                     <div class="col-12 col-lg-7">
-                        <p class="section-eyebrow">Inspiration</p>
-                        <h2 class="fw-bold" id="inspiration-titel">Udforsk vores stilarter</h2>
-                        <p class="inspo-section__intro">
-                            Bliv klogere på teknikkerne, materialerne og udtrykkene bag værkerne.
-                        </p>
+                        <h2 class="fw-bold text-canvas mb-2" id="inspiration-titel">Inspiration</h2>
                     </div>
                 </div>
 
@@ -240,22 +228,19 @@
                         <a href="blog.html#blogpost-1" class="inspo-card">
                             <div class="inspo-card__image-wrap">
                                 <img
-                                        src="images/IMG_9058.jpg"
-                                        width="600"
-                                        height="800"
-                                        alt="Alkoholbaseret tuscher på papir"
+                                        src="images/paige-cody-SV79TBuTls4-unsplash.jpg"
+                                        width="800"
+                                        height="1200"
+                                        alt="kvinde i stue med lyse og lette farver"
                                         class="inspo-card__image"
                                         loading="lazy"
                                 >
                             </div>
 
                             <div class="inspo-card__body">
-                                <p class="inspo-card__label">Teknik</p>
-                                <h3 class="inspo-card__title">Alkoholbaseret tusch</h3>
-                                <p class="inspo-card__text">
-                                    Farvestærke illustrationer med bløde overgange og markerede former.
-                                </p>
-                                <span class="inspo-card__cta">Læs mere</span>
+                                <p class="inspo-card__label">How to</p>
+                                <h3 class="inspo-card__title h4 pb-2">Gør din stue forårsklar</h3>
+                                <span class="inspo-card__cta pb-4">Læs mere</span>
                             </div>
                         </a>
                     </div>
@@ -264,8 +249,8 @@
                         <a href="blog.html#blogpost-2" class="inspo-card">
                             <div class="inspo-card__image-wrap">
                                 <img src="images/paulina-herpel-aeOvJ24HnFE-unsplash.jpg"
-                                     width="600"
-                                     height="800"
+                                     width="1200"
+                                     height="900"
                                      alt="hånd som skærer linoliumstryk"
                                      class="inspo-card__image"
                                      loading="lazy">
@@ -273,11 +258,8 @@
 
                             <div class="inspo-card__body">
                                 <p class="inspo-card__label">Teknik</p>
-                                <h3 class="inspo-card__title">Linocut</h3>
-                                <p class="inspo-card__text">
-                                    Grafiske tryk med håndskårne former, tydelige kontraster og tekstur.
-                                </p>
-                                <span class="inspo-card__cta">Læs mere</span>
+                                <h3 class="inspo-card__title pb-2">Linoleumstryk</h3>
+                                <span class="inspo-card__cta pb-4">Læs mere</span>
                             </div>
                         </a>
                     </div>
@@ -285,20 +267,17 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="blog.html#blogpost-3" class="inspo-card">
                             <div class="inspo-card__image-wrap">
-                                <img src="images/yukon-haughton-dOlx8L3snvs-unsplash.jpg"
-                                     width="600"
-                                     height="800"
+                                <img src="images/jonathan-borba-lsGZlrdvd_c-unsplash.jpg"
+                                     width="800"
+                                     height="1200"
                                      alt="closeup billede af oliekridt i stærke farver"
                                      class="inspo-card__image"
                                      loading="lazy">
                             </div>
 
                             <div class="inspo-card__body">
-                                <p class="inspo-card__label">Materiale</p>
-                                <h3 class="inspo-card__title">Oliekridt</h3>
-                                <p class="inspo-card__text">
-                                    Et sanseligt udtryk med tydelige strøg, dyb farve og taktil overflade.
-                                </p>
+                                <p class="inspo-card__label">Kunstnere</p>
+                                <h3 class="inspo-card__title">Heidi Larsen</h3>
                                 <span class="inspo-card__cta">Læs mere</span>
                             </div>
                         </a>
@@ -308,19 +287,16 @@
                         <a href="blog.html#blogpost-4" class="inspo-card">
                             <div class="inspo-card__image-wrap">
                                 <img src="images/tourbox-lwiESfzrVM4-unsplash.jpg"
-                                     width="600"
-                                     height="800"
+                                     width="800"
+                                     height="1200"
                                      alt="Digital kunstner sidder ved sin arbejdsplads"
                                      class="inspo-card__image"
                                      loading="lazy">
                             </div>
 
                             <div class="inspo-card__body">
-                                <p class="inspo-card__label">Stilart</p>
-                                <h3 class="inspo-card__title">Digital art</h3>
-                                <p class="inspo-card__text">
-                                    Moderne værker skabt digitalt, men stadig med kunstnerens hånd og proces i centrum.
-                                </p>
+                                <p class="inspo-card__label">Blogindlæg</p>
+                                <h3 class="inspo-card__title">Digital kunst</h3>
                                 <span class="inspo-card__cta">Læs mere</span>
                             </div>
                         </a>
