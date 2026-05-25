@@ -545,57 +545,49 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Blog
 
-.blog-page__header {
-  max-width: 44rem;
+.blog-post__title {
+  max-width: 28rem;
+  margin-bottom: 1.5rem;
 }
 
-.blog-page__intro,
-.blog-post__lead {
-  color: rgba($rust, 0.8);
-  line-height: 1.55;
+.blog-post__copy {
+  max-width: 34rem;
 }
 
-.blog-post {
-  border-top: 1px solid rgba($rust, 0.18);
-}
-
-.blog-post:first-of-type {
-  border-top: 0;
-}
-
-.blog-post__lead {
-  max-width: 42rem;
-  font-size: 1.05rem;
-}
-
-.blog-post__related-title {
-  margin-top: 1rem;
+.blog-text {
+  margin-bottom: 1rem;
   font-family: $font-body;
-  font-size: 1rem;
-  font-weight: 700;
+  line-height: 1.55;
+  color: rgba($rust, 0.85);
 }
 
-.blog-post__product-link {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  color: $rust;
-  font-family: $font-brand;
-  font-weight: 700;
-  text-decoration: none;
+.blog-quote {
+  font-family: $font-body;
+  font-style: italic;
 }
 
-.blog-post__product-link:hover,
-.blog-post__product-link:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.35em;
+.blog-text:last-child {
+  margin-bottom: 0;
 }
 
-.blog-post__product-link:focus-visible {
-  outline: 3px solid $is;
-  outline-offset: 4px;
-  border-radius: 0.75rem;
+.blog-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .blog-image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 //shop side styling
