@@ -554,6 +554,11 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   max-width: 34rem;
 }
 
+.section-divider {
+  border-top: 1px solid rgba($rust, 0.22);
+  padding-top: 1.5rem;
+}
+
 .blog-text {
   margin-bottom: 1rem;
   font-family: $font-body;
