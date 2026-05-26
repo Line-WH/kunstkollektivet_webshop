@@ -686,6 +686,12 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   transform: translateY(0);
 }
 
+@media (min-width: 992px) {
+  .blog-post__product-link {
+    margin-inline: 0;
+  }
+}
+
 .blog-post__product-title {
   margin: 0 0 0.15rem;
   font-family: $font-body;
