@@ -595,6 +595,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   }
 }
 
+
 //shop side styling
 
 .shop-page-title,
@@ -1092,14 +1093,29 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //Cart counter
 
+// Cart counter + animation
+
 .site-header__cart-link {
   position: relative;
+  overflow: visible;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.site-header__cart-link img {
+  transform-origin: center;
 }
 
 .site-header__cart-count {
   position: absolute;
-  top: -0.35rem;
-  right: -0.45rem;
+  top: -0.45rem;
+  right: -0.55rem;
+  z-index: 2;
 
   min-width: 1.1rem;
   height: 1.1rem;
@@ -1116,6 +1132,52 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1;
+
+  transform-origin: center;
+}
+
+.site-header__cart-link--bounce img {
+  animation: cartIconBounce 650ms cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+.site-header__cart-link--bounce .site-header__cart-count {
+  animation: cartCountPop 650ms ease;
+}
+
+@keyframes cartIconBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    transform: translateY(-0.45rem) scale(1.2);
+  }
+
+  45% {
+    transform: translateY(0) scale(0.9);
+  }
+
+  65% {
+    transform: translateY(-0.2rem) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cartCountPop {
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.45);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 // Menu button

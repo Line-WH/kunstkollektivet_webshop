@@ -288,10 +288,6 @@ function setupAddToCart(product) {
         window.CartStorage.addItem(cartItem);
 
         showCartFeedback(feedbackElement, `${product.title} er lagt i kurven.`);
-
-        if (window.CartStorage.updateCartCount) {
-            window.CartStorage.updateCartCount();
-        }
     });
 }
 
