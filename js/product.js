@@ -133,6 +133,7 @@ function renderGallery(product) {
                     <div class="carousel-item ${activeClass}">
                         <video
                             class="product-carousel__media"
+                            controls
                             autoplay
                             loop
                             muted

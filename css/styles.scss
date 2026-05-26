@@ -595,6 +595,117 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   }
 }
 
+.blog-post__product-link {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  max-width: 13rem;
+  margin-inline: auto;
+
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1rem;
+
+  background-color: white;
+  box-shadow: 0 0.5rem 1.25rem rgba($rust, 0.16);
+
+  color: $canvas;
+  text-decoration: none;
+
+  transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+}
+
+.blog-post__product-link img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  transition:
+          transform 220ms ease,
+          filter 220ms ease;
+}
+
+.blog-post__product-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+                  to top,
+                  rgba($rust, 0.86),
+                  rgba($rust, 0.28),
+                  transparent
+  );
+
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.blog-post__product-link:hover,
+.blog-post__product-link:focus-visible {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.75rem 1.5rem rgba($rust, 0.22);
+}
+
+.blog-post__product-link:hover img,
+.blog-post__product-link:focus-visible img {
+  transform: scale(1.04);
+  filter: brightness(0.78);
+}
+
+.blog-post__product-link:hover::before,
+.blog-post__product-link:focus-visible::before {
+  opacity: 1;
+}
+
+.blog-post__product-meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+  padding: 1rem;
+
+  opacity: 0;
+  transform: translateY(0.5rem);
+
+  transition:
+          opacity 220ms ease,
+          transform 220ms ease;
+}
+
+.blog-post__product-link:hover .blog-post__product-meta,
+.blog-post__product-link:focus-visible .blog-post__product-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-post__product-title {
+  margin: 0 0 0.15rem;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $canvas;
+}
+
+.blog-post__product-artist {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba($canvas, 0.88);
+}
+
+@media (max-width: 767.98px) {
+  .blog-post__product-link {
+    max-width: 10.5rem;
+  }
+}
+
 
 //shop side styling
 
